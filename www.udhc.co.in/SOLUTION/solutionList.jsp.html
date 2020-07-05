@@ -1,0 +1,3141 @@
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+
+        	 <link rel="stylesheet" href="../jqwidgets/styles/jqx.base.css" type="text/css" />
+
+<script type="text/javascript" src="../INPUT/js/jquery-1.8.3.min.js"></script>
+    
+    <script src="../INPUT/colorbox/jquery.colorbox.js"></script>
+<link rel="stylesheet" href="../INPUT/colorbox/colorbox.css" />
+
+<title>Solutions</title>
+
+<style type="text/css">
+
+table{
+	margin-left: 1px;
+	
+	margin-bottom: 2px;
+	padding-left: 2px;
+	font-size: 100%;
+	
+}
+tr:hover{
+ box-shadow: -1px -1px 10px #80B034;
+}
+div#table_container{
+
+	
+	max-height: 500px;
+	padding: 1%;
+	
+	
+	overflow: scroll;
+	overflow: auto;
+
+}
+
+.patient_name{
+	cursor:pointer;
+	color:black;
+	padding:5px;
+	
+	/*
+	margin-right: 10px;
+	*/
+	
+}
+
+.patient_name:hover{
+    box-shadow: -1px -1px 2px #80B034;
+}
+
+.patient_name a{
+    color: black;
+	text-decoration:none;
+	/*
+	font-size: 80%;
+	*/
+}
+
+
+a.patient_profile:visited{
+	color:black;
+}
+
+a.patient_profile{
+    
+   
+}
+
+.topic_name{
+    white-space: nowrap;	
+	
+	padding:10px;
+	/*
+	margin-left: 20px;
+	*/
+}
+
+.topic_name:hover{
+     box-shadow: -1px -1px 2px #80B034;
+}
+
+.topic_name a{
+	text-decoration: none;
+}
+
+.solution_box{
+	  white-space: nowrap;
+	width: 800px;
+}
+
+.solution_box a{
+	text-decoration: none;
+	padding: 5px;
+	color: black;
+	
+}
+
+.solution_box:hover{
+	text-decoration: none;
+	padding: 5px;
+	
+}
+
+td.date{
+
+	padding: 10px;
+
+}
+
+
+
+#info{
+	font-size: 120%;
+	padding-top: 2%;
+		
+}
+
+
+
+
+</style>
+
+<script type="text/javascript">
+
+	$(document).ready(call_on_ready);
+	
+	function call_on_ready(){
+		$("a.solution_link").colorbox({iframe:true, innerWidth:1000, innerHeight:900});
+		$("a.patient_profile").colorbox({iframe:true, innerWidth:1300, innerHeight:900});
+
+	}		
+
+
+</script>
+
+
+</head>
+
+         <link href="../LANDING/bootstrap.css" rel="stylesheet">   
+        <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-31924728-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+ 
+
+    
+     <script type="text/javascript">
+                 function openLoginPopup(){
+                	 alert("Please make sure Pop-ups are enabled in your browser");
+                	  var auth_win=window.open("/AUTH/auth.jsp","Auth", "width=1400,height=500,scrollbars=no");
+                	  var timer = setInterval(function() {   
+                		    if(auth_win.closed) {  
+                		        clearInterval(timer);  
+                		        window.location.reload(); 
+                		    }  
+                		}, 1000);
+               	                 	  
+                  }
+                 
+                 function visitHome() {
+                	 
+                	 window.location="/login.jsp";
+					
+				}
+                 
+	</script>
+    	
+
+<!-- header id="header">
+	
+	  <div id="logo" onclick="visitHome()">	
+	  	<img src="/STATICS/images/MA-logo.jpg" height="50px" width="auto"/>
+	  	
+	  		 <strong>ArogyaUDHC  - User-driven Health care	</strong>
+	  </div>
+	  <div id="all_links">	  		
+				<ul >
+				
+					<li> <a class="popup_login" onclick="openLoginPopup()" href="#"> LOGIN</a>
+					</li>
+				
+					<li> <a style='background-color:red' href="/HOW/how.jsp">HOW</a>
+					</li>
+					
+					<li><a href="/STATICS/what.jsp">WHAT</a>
+					</li>
+					
+					<li><a href="/STATICS/why.jsp">WHY</a>
+					</li>
+					
+					
+					<li><a style='background-color:red'  href="/INPUT/input_directory.jsp">INPUT</a>
+					</li>
+					
+					<li><a href="/PROCESS/process.jsp">PROCESS</a>
+					</li>
+					
+					<li><a href="/SOLUTION/solutionList.jsp">OUTPUT</a>
+					</li>
+			
+						
+					
+				
+					<li><a href="/DASHBOARD/dashboard.jsp">DASHBOARD</a>
+					</li>
+				
+					
+					
+				</ul>	
+		</div> 	  
+	
+</header-->
+
+
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+
+      <div class="navbar-inner">
+        <div class="container">
+       
+          
+          <a class="brand" href="../login.jsp.html">
+          		
+          	<img src="../STATICS/images/MA-logo.jpg" height="10px" width="30px"/>
+	  	
+	  		 <strong>ArogyaUDHC	</strong>
+	     </a>
+          <div class="nav-collapse collapse">
+            <ul class="nav" >
+              
+				<li> <a class="popup_login btn btn-lg"" onclick="openLoginPopup()" href="solutionList.jsp.html#"> LOGIN</a>
+					</li>
+				
+					<li> <a class="btn btn-lg" href="../HOW/how.jsp.html">HOW</a>
+					</li>
+					
+					<li><a class="btn btn-lg" href="../STATICS/what.jsp.html">WHAT</a>
+					</li>
+					
+					<li><a class="btn  btn-lg" href="../STATICS/why.jsp.html">WHY</a>
+					</li>
+					
+					
+					<li><a  class="btn  btn-lg" href="../INPUT/input_directory.jsp.html">INPUT</a>
+					</li>
+					
+					<li><a class="btn btn-lg" href="../PROCESS/process.jsp.html">PROCESS</a>
+					</li>
+					
+					<li><a class="btn btn-lg" href="solutionList.jsp.html">OUTPUT</a>
+					</li>
+					<!-- 
+			
+					 -->	
+					
+				
+					<li><a class="btn btn-lg" href="../DASHBOARD/dashboard.jsp.html">DASHBOARD</a>
+					</li>
+
+
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      
+    </div>
+ </div>
+
+<style>
+
+
+
+#header{
+	z-index:999;
+	position:fixed;
+	background-color: #F1F1F1;	
+	 border: 1px solid grey;
+	 padding:10px;
+	 width:100%;
+	 margin: auto;top:0;
+}
+
+#logo{
+
+	cursor:pointer;
+
+	float:left;
+	width:30%;
+	
+	background: rgb(246,248,249); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(246,248,249,1) 0%, rgba(229,235,238,1) 50%, rgba(215,222,227,1) 51%, rgba(245,247,249,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(246,248,249,1)), color-stop(50%,rgba(229,235,238,1)), color-stop(51%,rgba(215,222,227,1)), color-stop(100%,rgba(245,247,249,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#f5f7f9',GradientType=0 ); /* IE6-9 */
+	
+}
+#all-links{
+	
+
+}
+#all_links ul li{
+	display: inline;
+
+} 
+
+#all_links ul li a{
+	background-color: #174FF5;
+	color: white;
+	text-decoration: none;
+	padding: 10px;
+	border-radius: 5px;
+	font-weight: bold;
+
+}
+
+#all_links ul li a:hover{
+	background-color: green;
+	color: white;
+	
+
+}
+	
+</style>
+
+<br><br><br>
+<body>
+
+
+
+<div id="info" align="center">
+
+<img width="50px"  height="50px" src="../STATICS/images/solved.jpeg"/>
+&nbsp;&nbsp;
+
+	The following health issues have been solved by our team
+
+</div>
+
+<br>
+
+<div id="table_container">
+
+<table class="table table-striped table-bordered table-condensed" >
+
+		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Ficus-736146-Benjamina.html">
+  		Ficus-736146-Benjamina
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=131.html"> Difficulty in Walking and Urination for 10 years. 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=32&topic_id=131.html"> 
+  		
+  		ENG(<Strong> May 8</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=BOERHAAVIA712136DIFFUSAL.%2050M.html">
+  		BOERHAAVIA712136DIFFUSAL. 50M
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=140.html"> Multi-symptom pain 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=33&topic_id=140.html"> 
+  		
+  		ENG(<Strong> May 8</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=ABELMOSCHUS462001ESCULENTUS.html">
+  		ABELMOSCHUS462001ESCULENTUS
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=146.html"> Living with Thyroid disease since 2005 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=34&topic_id=146.html"> 
+  		
+  		ENG(<Strong> May 8</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=ABELMOSCHUS462MOSCHATUS.html">
+  		ABELMOSCHUS462MOSCHATUS
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=150.html"> Living and recording my Diabetes since a few years 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=27&topic_id=150.html"> 
+  		
+  		ENG(<Strong> Apr 1</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=ABELMOSCHUS736146ESCULENTUS01.html">
+  		ABELMOSCHUS736146ESCULENTUS01
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=166.html"> 50 M with Sudden Paralysis and past High Blood Pressure 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=6&topic_id=166.html"> 
+  		
+  		ENG(<Strong> Feb 15</Strong> )	 </a>
+  		</td>
+  		
+  		
+
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=7&topic_id=166.html"> 
+  		
+  		BEN(<Strong> Feb 15</Strong> )	 </a>
+  		</td>
+  		
+  		
+
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=21&topic_id=166.html"> 
+  		
+  		ENG(<Strong> Mar 14</Strong> )	 </a>
+  		</td>
+  		
+  		
+
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=22&topic_id=166.html"> 
+  		
+  		BEN(<Strong> Mar 14</Strong> )	 </a>
+  		</td>
+  		
+  		
+
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=25&topic_id=166.html"> 
+  		
+  		BEN(<Strong> Mar 20</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Ipomoea736146Pes-capral(L)Br.html">
+  		Ipomoea736146Pes-capral(L)Br
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=173.html"> Pain in Right Knee and Hip 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=8&topic_id=173.html"> 
+  		
+  		ENG(<Strong> Feb 15</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=ABELMOSCHUS736146MOSCHATUS01.html">
+  		ABELMOSCHUS736146MOSCHATUS01
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=176.html"> Low back pain 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=54&topic_id=176.html"> 
+  		
+  		ENG(<Strong> May 22</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Ixora%20Cunelfolia%20L..html">
+  		Ixora Cunelfolia L.
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=178.html"> 2 year old child with deformed toes 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=36&topic_id=178.html"> 
+  		
+  		ENG(<Strong> May 8</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=ipomoea736146Maxima.html">
+  		ipomoea736146Maxima
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=186.html"> Inguinal fullness and body swelling 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=38&topic_id=186.html"> 
+  		
+  		ENG(<Strong> May 9</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Ixora736146ArboreaRoxb.exSm..html">
+  		Ixora736146ArboreaRoxb.exSm.
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=188.html"> Pain in lower abdomen and during urination or defecation 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=13&topic_id=188.html"> 
+  		
+  		ENG(<Strong> Feb 20</Strong> )	 </a>
+  		</td>
+  		
+  		
+
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=20&topic_id=188.html"> 
+  		
+  		BEN(<Strong> Mar 3</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Ixora736146Coccinea%20L..html">
+  		Ixora736146Coccinea L.
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=189.html"> Burning Sensation and Pain Abdomen in 30 year old Male 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=39&topic_id=189.html"> 
+  		
+  		ENG(<Strong> May 9</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Ipomoea736146Alba%20L..html">
+  		Ipomoea736146Alba L. 
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=191.html"> Pain and Swelling in Joints 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=9&topic_id=191.html"> 
+  		
+  		ENG(<Strong> Feb 17</Strong> )	 </a>
+  		</td>
+  		
+  		
+
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=10&topic_id=191.html"> 
+  		
+  		BEN(<Strong> Feb 17</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Ixora736146Nigricans.html">
+  		Ixora736146Nigricans
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=192.html"> Psoriasis 9F 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=55&topic_id=192.html"> 
+  		
+  		ENG(<Strong> May 22</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Jasminum736146Angustifolium.html">
+  		Jasminum736146Angustifolium
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=193.html"> Undiagnosed Fever for four days 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=57&topic_id=193.html"> 
+  		
+  		ENG(<Strong> May 23</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Ipomea736146Batatus(L)Lamk.html">
+  		Ipomea736146Batatus(L)Lamk
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=194.html"> Right sided headache and Eye pain for a year 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=41&topic_id=194.html"> 
+  		
+  		ENG(<Strong> May 12</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Ipomoea736146Mauritiana.html">
+  		Ipomoea736146Mauritiana 
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=195.html"> Chronic pelvic pain and frequent Urination 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=56&topic_id=195.html"> 
+  		
+  		ENG(<Strong> May 23</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Ipomoea736146AquaticaForsk.html">
+  		Ipomoea736146AquaticaForsk
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=196.html"> Low back ache, early morning stiffness, anxiety and frequent uri... 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=11&topic_id=196.html"> 
+  		
+  		ENG(<Strong> Feb 18</Strong> )	 </a>
+  		</td>
+  		
+  		
+
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=12&topic_id=196.html"> 
+  		
+  		BEN(<Strong> Feb 18</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Hedyotes736146Diffusa.html">
+  		Hedyotes736146Diffusa
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=197.html">  Progressive Muscle weakness in a 9 year old boy 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=42&topic_id=197.html"> 
+  		
+  		ENG(<Strong> May 12</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Jatropha736146Curcas.html">
+  		Jatropha736146Curcas
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=198.html"> Gynaecology problem 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=43&topic_id=198.html"> 
+  		
+  		ENG(<Strong> May 12</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=ABELMOSCHUS160017ESCULENTUS.html">
+  		ABELMOSCHUS160017ESCULENTUS
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=199.html"> Hydrocephalus in 7 month old fetus and currently a healthy new b... 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=14&topic_id=199.html"> 
+  		
+  		ENG(<Strong> Feb 27</Strong> )	 </a>
+  		</td>
+  		
+  		
+
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=15&topic_id=199.html"> 
+  		
+  		HIN(<Strong> Feb 27</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Jatropha736146Gossypifolia.html">
+  		Jatropha736146Gossypifolia
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=200.html"> 62 year old lady with a 2.8 cm staghorn right renal stone and re... 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=44&topic_id=200.html"> 
+  		
+  		ENG(<Strong> May 12</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=CARDIOSPERMUM736146HALICACABUM.html">
+  		CARDIOSPERMUM736146HALICACABUM 
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=201.html"> Intermittent Urinary Incontinence and headache 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=45&topic_id=201.html"> 
+  		
+  		ENG(<Strong> May 12</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Justicia736Gendarussa.html">
+  		Justicia736Gendarussa
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=208.html"> 43 year old man with pain during urination, abdominal swelling a... 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=46&topic_id=208.html"> 
+  		
+  		ENG(<Strong> May 12</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=JUSTICIA736146SIMPLEX.html">
+  		JUSTICIA736146SIMPLEX
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=210.html"> Inability to chew following a cycle accident 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=18&topic_id=210.html"> 
+  		
+  		ENG(<Strong> Mar 3</Strong> )	 </a>
+  		</td>
+  		
+  		
+
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=19&topic_id=210.html"> 
+  		
+  		BEN(<Strong> Mar 3</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=ABROMA462001AUGUSTA.html">
+  		ABROMA462001AUGUSTA
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=214.html"> High bood pressure and recent brain attack 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=16&topic_id=214.html"> 
+  		
+  		ENG(<Strong> Mar 3</Strong> )	 </a>
+  		</td>
+  		
+  		
+
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=17&topic_id=214.html"> 
+  		
+  		BEN(<Strong> Mar 3</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=ABRUS462001PRECATORIUS.html">
+  		ABRUS462001PRECATORIUS
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=218.html"> 23 year old woman with oily stools since 9 years of age and pain... 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=40&topic_id=218.html"> 
+  		
+  		ENG(<Strong> May 11</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Kaempferia736146Rotunda.html">
+  		Kaempferia736146Rotunda 
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=220.html"> Central Chest Pain 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=24&topic_id=220.html"> 
+  		
+  		ENG(<Strong> Mar 19</Strong> )	 </a>
+  		</td>
+  		
+  		
+
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=26&topic_id=220.html"> 
+  		
+  		ENG(<Strong> Mar 23</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=ABELMOSCHUS532712ESCULENTUS(Nepal).html">
+  		ABELMOSCHUS532712ESCULENTUS(Nepal)
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=223.html"> Constant Heartburn for 15 years 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=23&topic_id=223.html"> 
+  		
+  		ENG(<Strong> Mar 17</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Lablab736Purpureus.html">
+  		Lablab736Purpureus
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=227.html"> 10 year old girl with abdominal pain 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=47&topic_id=227.html"> 
+  		
+  		ENG(<Strong> May 12</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Kaempferia736146Galanga.html">
+  		Kaempferia736146Galanga
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=228.html"> a 55 year old man with Difficulty in walking and a spastic gait ... 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=48&topic_id=228.html"> 
+  		
+  		ENG(<Strong> May 12</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=LAGERSTROEMIA736146INDICA.html">
+  		LAGERSTROEMIA736146INDICA
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=231.html"> A young lady with Thyroid nodule since 2008 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=49&topic_id=231.html"> 
+  		
+  		ENG(<Strong> May 12</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Barlaria736146Strigosa.html">
+  		Barlaria736146Strigosa
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=234.html">  43 year old lady with amenorrhoea since 3 months, weight gain a... 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=50&topic_id=234.html"> 
+  		
+  		ENG(<Strong> May 12</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Lagerstroemia736Reginae.html">
+  		Lagerstroemia736Reginae
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=239.html"> 5 year old girl with a back swelling 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=51&topic_id=239.html"> 
+  		
+  		ENG(<Strong> May 12</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Kalanchoe736Pinnata.html">
+  		Kalanchoe736Pinnata
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=240.html"> Sudden and persistent Shoulder pain and arm tingling in a 44M 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=58&topic_id=240.html"> 
+  		
+  		ENG(<Strong> May 23</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=ELAEOCARPUS736146SPHAERICUS.html">
+  		ELAEOCARPUS736146SPHAERICUS
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=242.html"> Fever due to Fungal Cellulitis following road traffic accident 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=60&topic_id=242.html"> 
+  		
+  		ENG(<Strong> May 24</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Lannea736Coromandelica.html">
+  		Lannea736Coromandelica
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=244.html"> Progressive fatigue, anorexia and dyspepsia 1 year 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=64&topic_id=244.html"> 
+  		
+  		ENG(<Strong> May 25</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Calotropis711102Procerar.Br..html">
+  		Calotropis711102Procerar.Br.
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=249.html"> Stiffness of joint, Bony deformity, Short stature, Facial Deform... 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=52&topic_id=249.html"> 
+  		
+  		ENG(<Strong> May 13</Strong> )	 </a>
+  		</td>
+  		
+  		
+
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=53&topic_id=249.html"> 
+  		
+  		ENG(<Strong> May 13</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Capsicum%20Frutescence%20L..html">
+  		Capsicum Frutescence L.
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=250.html"> Lower abdominal pain with Difficulty in passing stool 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=28&topic_id=250.html"> 
+  		
+  		ENG(<Strong> Apr 2</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=ABUTILON462INDICUM.html">
+  		ABUTILON462INDICUM
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=253.html"> 65 year old lady with 7 years of Parkinsons and recent Crohns di... 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=30&topic_id=253.html"> 
+  		
+  		ENG(<Strong> Apr 5</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Lantana736146CamaraLAge-65yF.html">
+  		Lantana736146CamaraLAge-65yF
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=259.html"> 65 year old lady with recurrent falls, low back ache with hip an... 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=29&topic_id=259.html"> 
+  		
+  		ENG(<Strong> Apr 5</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=GLYCOSMIS736PENTAPHYLLA.html">
+  		GLYCOSMIS736PENTAPHYLLA
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=261.html"> Fibromyalgia syndrome with oral burning  
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=59&topic_id=261.html"> 
+  		
+  		ENG(<Strong> May 23</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=ABELMOSCHUS700ESCULENTUS.html">
+  		ABELMOSCHUS700ESCULENTUS
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=263.html"> A 13 year old girl with Agenesis of Corpus Callosum 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=61&topic_id=263.html"> 
+  		
+  		ENG(<Strong> May 24</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Adhatoda736Zeylanica.html">
+  		Adhatoda736Zeylanica
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=265.html"> 85 year old man with Subdural Hematoma  
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=62&topic_id=265.html"> 
+  		
+  		ENG(<Strong> May 24</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Laportea736Crenulata.html">
+  		Laportea736Crenulata
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=266.html"> 9 year old boy with failure to thrive 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=65&topic_id=266.html"> 
+  		
+  		ENG(<Strong> May 25</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Ageratum736Conyzoides.html">
+  		Ageratum736Conyzoides
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=267.html"> Palpitations, Obesity and Dryness of Throat 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=66&topic_id=267.html"> 
+  		
+  		ENG(<Strong> May 25</Strong> )	 </a>
+  		</td>
+  		
+  		
+
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=67&topic_id=267.html"> 
+  		
+  		BEN(<Strong> May 25</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=ABELMOSCHUS(M4B)ESCULENTUS.html">
+  		ABELMOSCHUS(M4B)ESCULENTUS
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=272.html"> 60 year old man with progressive loss of vision due to Retinitis... 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=31&topic_id=272.html"> 
+  		
+  		ENG(<Strong> Apr 16</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=%20LAUNAEA736ASPLENIIFOLIA.html">
+  		 LAUNAEA736ASPLENIIFOLIA
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=273.html"> A 49 day old baby girl with persistent Jaundice since 3 weeks 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=68&topic_id=273.html"> 
+  		
+  		ENG(<Strong> May 26</Strong> )	 </a>
+  		</td>
+  		
+  		
+
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=80&topic_id=273.html"> 
+  		
+  		ENG(<Strong> Jul 7</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=ACACIA462CATECHU.html">
+  		ACACIA462CATECHU
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=274.html"> 62 year old man with pain abdomen 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=69&topic_id=274.html"> 
+  		
+  		ENG(<Strong> May 26</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=LASIA736SPINOSA.html">
+  		LASIA736SPINOSA
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=275.html"> Operated Piles with stenosed anal opening 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=70&topic_id=275.html"> 
+  		
+  		ENG(<Strong> May 26</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Isodon736Lopanthoides.html">
+  		Isodon736Lopanthoides
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=278.html"> Right sided pulsatile neck mass  
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=71&topic_id=278.html"> 
+  		
+  		ENG(<Strong> May 26</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Launaea736146Sarmentosa.html">
+  		Launaea736146Sarmentosa
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=279.html"> 55 year old man with Abdominal Pain  
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=72&topic_id=279.html"> 
+  		
+  		ENG(<Strong> May 26</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Lowsonia736Inermis.html">
+  		Lowsonia736Inermis
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=280.html"> 9 year old girl with cough and pain abdomen 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=73&topic_id=280.html"> 
+  		
+  		ENG(<Strong> May 26</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Leea736Aequata.html">
+  		Leea736Aequata
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=281.html"> 39 year old man with body burning and weakness following spinal ... 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=74&topic_id=281.html"> 
+  		
+  		ENG(<Strong> May 27</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=ACACIA462FARNESIANA.html">
+  		ACACIA462FARNESIANA
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=283.html"> Low Backache with cirrhosis and past Infective Endocarditis and ... 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=75&topic_id=283.html"> 
+  		
+  		ENG(<Strong> May 30</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Leea736Aequata.html">
+  		Leea736Aequata
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=285.html"> Post spinal trauma neuropathic pains 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=76&topic_id=285.html"> 
+  		
+  		ENG(<Strong> May 30</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=ABELMOSCHUS480ESCULENTUS.html">
+  		ABELMOSCHUS480ESCULENTUS 
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=297.html"> A 20 year old lady with a discharging sinus in her arm 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=63&topic_id=297.html"> 
+  		
+  		ENG(<Strong> May 25</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Leucas736Zeylanica.html">
+  		Leucas736Zeylanica
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=319.html"> 63 year old lady with multiple diabetic complications 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=79&topic_id=319.html"> 
+  		
+  		BEN(<Strong> Jun 27</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Abelmoschus372Esculentus.html">
+  		Abelmoschus372Esculentus
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=320.html"> Elderly man with a Metastatic Neuroendocrine tumor and altered s... 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=77&topic_id=320.html"> 
+  		
+  		ENG(<Strong> Jun 16</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=ACORUS462CALAMUS.html">
+  		ACORUS462CALAMUS
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=321.html"> 63 year old lady with Periodic episodes of headache and vomittin... 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=78&topic_id=321.html"> 
+  		
+  		ENG(<Strong> Jun 23</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Litsea736Gluteonsa(Lour)Rob.html">
+  		Litsea736Gluteonsa(Lour)Rob
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=337.html"> Allergic Airway Disease in a 12 year old Male 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=82&topic_id=337.html"> 
+  		
+  		ENG(<Strong> Jul 15</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=ACRONYCHIA462PEDUNCULATA.html">
+  		ACRONYCHIA462PEDUNCULATA
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=800.html"> A middle aged man with difficulty in breathing relieved only on ... 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=81&topic_id=800.html"> 
+  		
+  		ENG(<Strong> Jul 14</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Abelmoschus110Aesculentus.html">
+  		Abelmoschus110Aesculentus
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=801.html"> Chest tightness and muscular pain 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=84&topic_id=801.html"> 
+  		
+  		ENG(<Strong> Jul 19</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=ABRUS736PRECATORIUS01.html">
+  		ABRUS736PRECATORIUS01
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=805.html"> 53 year old man with operated Chronic subdural hematoma, head tr... 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=83&topic_id=805.html"> 
+  		
+  		ENG(<Strong> Jul 19</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=LIMNOPHILA736INDICA.html">
+  		LIMNOPHILA736INDICA
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=806.html"> 10 year old boy with chronic cough 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=85&topic_id=806.html"> 
+  		
+  		ENG(<Strong> Jul 21</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=ABROMA736AUGUSTA01.html">
+  		ABROMA736AUGUSTA01
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=808.html"> 24 year old man with Headache for 2 years 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=86&topic_id=808.html"> 
+  		
+  		BEN(<Strong> Aug 20</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=ABUTILON736INDICUM01.html">
+  		ABUTILON736INDICUM01
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=811.html"> 70 year old man with shortness of breath and body swelling 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=96&topic_id=811.html"> 
+  		
+  		ENG(<Strong> Oct 2</Strong> )	 </a>
+  		</td>
+  		
+  		
+
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=97&topic_id=811.html"> 
+  		
+  		BEN(<Strong> Oct 2</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Mangifera736Indica.html">
+  		Mangifera736Indica
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=819.html"> 49 year old man with diabetes and chronic Hepatitis B since 2008 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=98&topic_id=819.html"> 
+  		
+  		ENG(<Strong> Nov 9</Strong> )	 </a>
+  		</td>
+  		
+  		
+
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=99&topic_id=819.html"> 
+  		
+  		ENG(<Strong> Nov 9</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=AEGLE462MARMELOS.html">
+  		AEGLE462MARMELOS
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=826.html"> 21 year old man with epilepsy/seizure/mirgi 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=94&topic_id=826.html"> 
+  		
+  		ENG(<Strong> Oct 2</Strong> )	 </a>
+  		</td>
+  		
+  		
+
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=95&topic_id=826.html"> 
+  		
+  		HIN(<Strong> Oct 2</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=Abelmoschus721Moschatus.html">
+  		Abelmoschus721Moschatus
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=828.html"> Persisting fever with progressive coughing since 2 months 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=87&topic_id=828.html"> 
+  		
+  		ENG(<Strong> Sep 23</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=ALANGIUM462SALVIFOLIUM.html">
+  		ALANGIUM462SALVIFOLIUM 
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=833.html"> 65 year old man with difficulty in walking, memory loss  and uri... 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=89&topic_id=833.html"> 
+  		
+  		BEN(<Strong> Sep 30</Strong> )	 </a>
+  		</td>
+  		
+  		
+
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=90&topic_id=833.html"> 
+  		
+  		ENG(<Strong> Sep 30</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=ALBIZIA462CHINENSIS.html">
+  		ALBIZIA462CHINENSIS
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=835.html"> 50 year old man with an ST elevation heart attack STEMI 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=91&topic_id=835.html"> 
+  		
+  		ENG(<Strong> Sep 30</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=BARLARIA462STRIGOSA.html">
+  		BARLARIA462STRIGOSA
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=842.html"> 40 year old man with gradual shortness of breath for 4 months 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=93&topic_id=842.html"> 
+  		
+  		ENG(<Strong> Sep 30</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=BARRINGTONIA462ACUTANGULA.html">
+  		BARRINGTONIA462ACUTANGULA
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=843.html"> 50 year old man with recent jaundice 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=92&topic_id=843.html"> 
+  		
+  		ENG(<Strong> Sep 30</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=BARLERIA462PRIONITIS.html">
+  		BARLERIA462PRIONITIS
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=844.html"> 35 year old man with childhood paralysis after fever and current... 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=88&topic_id=844.html"> 
+  		
+  		ENG(<Strong> Sep 30</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=CALLICARPA462TOMENTOSA.html">
+  		CALLICARPA462TOMENTOSA
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=927.html"> 46 year old man with stomach pain, urinary burning and joint pai... 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=102&topic_id=927.html"> 
+  		
+  		ENG(<Strong> Nov 10</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=CAMELLIA462SINENSIS.html">
+  		CAMELLIA462SINENSIS
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=934.html"> 30 years old woman with a thyroid swelling since 2004 and rheuma... 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=101&topic_id=934.html"> 
+  		
+  		ENG(<Strong> Nov 10</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=CALOTROPIS462GIGANTEA.html">
+  		CALOTROPIS462GIGANTEA 
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=935.html"> 50 years old woman with chest pain 6 months back and current epi... 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=100&topic_id=935.html"> 
+  		
+  		ENG(<Strong> Nov 10</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=PHOENIX736SYLVESTRIS.html">
+  		PHOENIX736SYLVESTRIS
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=1151.html"> 13 year old boy with diabetes since 4 years 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=104&topic_id=1151.html"> 
+  		
+  		BEN(<Strong> May 20</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  		
+<tr >
+  		<td class="patient_name">
+  		
+  		<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=ACACIA736PENNATA01.html">
+  		ACACIA736PENNATA01
+  		</a>
+  		
+  		
+  		
+  		
+  		</td>
+  <td class="topic_name" width="500px">
+  
+  		<a href="../INPUT/displayIssueGraphically.jsp-topic_id=1229.html"> a 47 year old male presenting with pain in the hand, diminished ... 
+  		</a>
+  		</td>
+  		
+  
+ 
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=103&topic_id=1229.html"> 
+  		
+  		ENG(<Strong> May 20</Strong> )	 </a>
+  		</td>
+  		
+  		
+
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=105&topic_id=1229.html"> 
+  		
+  		BEN(<Strong> May 20</Strong> )	 </a>
+  		</td>
+  		
+  		
+
+  		<td class="solution_box"> 
+  		<a class="solution_link" href="viewSolution.jsp-solution_id=106&topic_id=1229.html"> 
+  		
+  		BEN(<Strong> May 20</Strong> )	 </a>
+  		</td>
+  		
+  		
+  		
+  		
+  		
+  		
+  </tr>
+  
+  
+	</table>
+	</div>
+</body>
+</html>

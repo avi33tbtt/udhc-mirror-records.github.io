@@ -1,0 +1,694 @@
+
+
+
+
+
+<html>
+<head>
+<meta charset='utf-8' />
+
+
+<script type="text/javascript"
+	src="js/jquery-1.8.3.min.js"></script>
+<link
+	href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css"
+	rel="stylesheet" type="text/css" />
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+<script
+	src="colorbox/jquery.colorbox.js"></script>
+<link rel="stylesheet"
+	href="colorbox/colorbox.css" />
+
+
+
+
+
+<title>50 year old man with an ST elevation heart attack STEMI</title>
+<style type="text/css">
+/* jQuery lightBox plugin - Gallery style */
+#gallery {
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	padding: 5px;
+	z-index: 1;
+	width: 40%;
+	height: 300px;
+	overflow: auto;
+}
+
+#gallery ul {
+	list-style: none;
+}
+
+#gallery ul li {
+	display: inline;
+}
+
+#gallery ul img {
+	border: 5px solid #3e3e3e;
+	border-width: 5px 5px 20px;
+}
+
+#gallery ul a:hover img {
+	border: 5px solid #fff;
+	border-width: 5px 5px 20px;
+	color: #fff;
+	width: auto;
+	height: 650px;
+	border-style: solid;
+	border-color: black;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	position: absolute;
+	z-index: 900;
+}
+
+
+#comments_guidelines {
+	background-color: #FAFAFA;
+	color: #021C33;
+	font-size: 100%;
+	padding: 1%;
+	margin-left: 10%;
+	margin-right: 10%;
+	border-color: #021C33;
+	border: medium;
+	border-width: 1px;
+	border-style: solid;
+	font-weight: 2px;
+}
+
+.comments_guidelines a {
+	color: #3482C2;
+}
+
+#b {
+	background-color: #4084F2;
+	color: white;
+	font-size: 120%;
+	padding: 12px;
+	
+}
+
+
+.discussion_div {
+	margin-right: 10%;
+	margin-left: 10%;
+}
+
+#issue_metadata {
+    border-radius:10px;
+	background-color: #FAFAFA;
+	color: #021C33;
+	font-size: 110%;
+	padding: 1%;
+	margin-left: 10%;
+	margin-right: 10%;
+	
+	font-weight: 2px;
+	
+	-moz-box-shadow: 0 0 10px #ccc;
+	-webkit-box-shadow: 0 0 10px #ccc;
+	box-shadow: 0 0 10px #ccc;
+}
+
+
+
+#edit_link
+{
+	text-decoration: none;
+	padding: 10px;
+	font-size: 110%;
+	background-color: #6397E1;
+	color: white;
+	
+}
+
+div#topic_div{
+	
+	color: #032844;
+	padding: 12px;
+	font-size: 130%;
+    border-radius: 15px;
+}
+
+div#similar_issues_div{
+
+	padding: 10px;
+
+
+}
+
+div#similar_issues_list{
+	
+	
+	font-size: 110%;
+}
+div.similar_issues_entry{
+
+	margin: 20px;
+	
+}
+
+a.similar_issues_link{
+	
+	
+}
+
+</style>
+
+
+
+<link rel="stylesheet" href="../mystyle.css"
+	type="text/css" />
+
+
+
+
+
+<script src="http://yui.yahooapis.com/3.5.0/build/yui/yui-min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="http://yui.yahooapis.com/2.9.0/build/menu/assets/skins/sam/menu.css" />
+<link rel="stylesheet" type="text/css"
+	href="http://yui.yahooapis.com/2.9.0/build/button/assets/skins/sam/button.css" />
+<link rel="stylesheet" type="text/css"
+	href="http://yui.yahooapis.com/2.9.0/build/fonts/fonts-min.css" />
+<link rel="stylesheet" type="text/css"
+	href="http://yui.yahooapis.com/2.9.0/build/container/assets/skins/sam/container.css" />
+<link rel="stylesheet" type="text/css"
+	href="http://yui.yahooapis.com/2.9.0/build/editor/assets/skins/sam/editor.css" />
+<script type="text/javascript"
+	src="http://yui.yahooapis.com/2.9.0/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script type="text/javascript"
+	src="http://yui.yahooapis.com/2.9.0/build/element/element-min.js"></script>
+<script type="text/javascript"
+	src="http://yui.yahooapis.com/2.9.0/build/container/container-min.js"></script>
+<script type="text/javascript"
+	src="http://yui.yahooapis.com/2.9.0/build/menu/menu-min.js"></script>
+<script type="text/javascript"
+	src="http://yui.yahooapis.com/2.9.0/build/button/button-min.js"></script>
+<script type="text/javascript"
+	src="http://yui.yahooapis.com/2.9.0/build/editor/editor-min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="http://yui.yahooapis.com/2.9.0/build/fonts/fonts-min.css" />
+<script type="text/javascript"
+	src="http://yui.yahooapis.com/2.9.0/build/yahoo/yahoo-min.js"></script>
+<script type="text/javascript"
+	src="http://yui.yahooapis.com/2.9.0/build/event/event-min.js"></script>
+<script type="text/javascript"
+	src="http://yui.yahooapis.com/2.9.0/build/connection/connection-min.js"></script>
+
+<script>
+            
+ 		  // jQuery.noConflict();  
+		
+            
+ 		$(document).ready(function() {
+            	           //  $('#gallery a').lightBox();
+                 	$(".report_image").colorbox({rel:'report_image', top: 100, photo:'true', transition:"none", width:"auto", height:"1000px"});
+                    fetchPosts();
+                    fetchSimilarCases();
+            			//	alert("touched");
+            			
+                    		             			
+
+            });
+ 		
+ 		function fetchSimilarCases()
+ 		{
+ 			var issue_description =  '                                                                                                                                                                                                                                                                                                                                                <font style="font-size: 10pt; font-style: normal; font-family: Arial, Verdana;" face="Arial Black"><b>History submitted by Dr Abhishek Jain, INTERN at PCMS &amp; R.C. ,Bhopal</b></font><div style="font-size: 10pt; font-style: normal; font-family:  Times New Roman ;"><font face="Arial Black"><b><br></b></font></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><font face="Arial Black"><b><font size="2"><i>A male patient aged 50 years was admitted to our Hospital in autumn 2013 with Chief complaints of Chest pain which was Severe in intensity, diffusely located on the LEFT side of chest, associated with a feeling of heaviness over that region.<br><br>Chest pain was also associated with PROFUSE SWEATING and pain&nbsp;occurred in patient while performing his daily routine activities.Initially pain subsided in terms of Intensity on its Own, after 10 mins of its onset and further decreased upon intake of a medication ,taken Sub-lingually.</i></font></b></font></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><font face="Arial Black"><b><font size="2"><i><br>Patient was admitted to our hospital after 8 to 9 hours of first episode of Chest pain and sweating, though ECG was done within 1 hour of this episode nearby his home at a clinic (see attached ECG after one hour...the dates on the ECG are that of the scanner and not the actual date the ECG was taken...). <br><br>The patient had 50% reduction of his chest pain and repeat ECG showed further appearance of q waves not just in V1 and V2 as in the ECG after one hour but also in V3.V4,V5. ST elevation was persistent and &gt;5mm in all leads.<br></i></font></b></font></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><font face="Arial Black"><b><font size="2"><i><br>OTHER significant History- Patient has an addiction to tobacco for past 20 years.</i></font></b></font></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><font face="Arial Black"><b><font size="2"><i><br></i></font></b></font></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><font face="Arial Black" size="2"><b>Examination of Patient-</b></font></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><font face="Arial Black" size="2"><b>Day 1 of admission:</b></font></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><ul><li><b style="font-family:  Arial Black ; font-size: small;">Pulse- 70/min, BP-110/80 mm of Hg , RR-18/min, Temp - afebrile .</b></li><li><b style="font-family:  Arial Black ; font-size: small;">Clubbing,Pallor, Edema , Cyanosis, Tremors - absent</b></li><li><b style="font-family:  Arial Black ; font-size: small;">RS: B/L chest - CLEAR, no added sound; CVS: S1, S2 audible ; P/A system- soft,non tender, Spleen &amp; Liver not palpable ;CNS :Pt is conscious,oriented and no Focal defect seen, patient could easily narrate his History.</b></li></ul></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><font face="Arial Black" size="2"><b>Investigations done-</b></font></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><font face="Georgia" size="2"><b><i>On Day 1 of admission-</i></b></font></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><b style="font-family:  Arial Black ; font-size: small;">1</b><b style="font-family:  Arial Black ;"><font size="2">)CBP:-</font></b></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><b><u><font face="Impact"><font size="4">Parameter: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Result: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Ref. Range &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Opinion &nbsp; &nbsp; &nbsp;</font>&nbsp;</font><font style="font-size: small;" face="Arial Black">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</font></u><font style="font-size: small;" face="Arial Black">&nbsp; &nbsp; &nbsp;&nbsp;</font></b></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><font face="Arial Black" size="2"><b>-WBC: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 9.3 x 10^9/L &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4 to 10.0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;within normal range</b></font></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><font face="Arial Black" size="2"><b>-DLC: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; P- 76%, L-21%, M-1%, E-2%</b></font></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><font face="Arial Black" size="2"><b>-Hb: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;12.5 g/dl &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;11- 16.0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; within normal range</b></font></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><font face="Arial Black" size="2"><b>-RBC: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4.11 X 10^12/L &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3.50-5.50 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</b></font><b style="font-family:  Arial Black ; font-size: small;">within normal range</b></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><font face="Arial Black" size="2"><b>-PLT: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 206 x 10^9/L &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;100-300 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</b></font><b style="font-family:  Arial Black ; font-size: small;">within normal range</b></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><b style="font-family:  Arial Black ; font-size: small;"><br></b></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><font face="Arial Black" size="2"><b>2)RANDOM BLOOD SUGAR: 113.O mg% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;140mg% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</b></font><b style="font-family:  Arial Black ; font-size: small;">within normal range</b></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><b style="font-family:  Arial Black ; font-size: small;">3)Renal function test:</b></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><b style="font-family:  Arial Black ; font-size: small;">-Blood Urea &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;27.8mg% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 10 - 40mg% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</b><b style="font-family:  Arial Black ; font-size: small;">within normal range</b></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><font face="Arial Black" size="2"><b>-S.&nbsp;Creatinine &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.0mg% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0.7 - 1.4mg% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</b></font><b style="font-family:  Arial Black ; font-size: small;">within normal range</b></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><b style="font-family:  Arial Black ; font-size: small;"><br></b></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><b style="font-size: small;"><font face="Georgia"><i>On Day 2 of admission-</i></font></b></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><font face="Arial Black">1)<font size="2">Lipid Profile:</font></font></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><font face="Arial Black" size="2">Serum -Cholesterol: &nbsp; &nbsp;207.0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;150-250mg% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</font><b style="font-family:  Arial Black ; font-size: small;">within normal range</b></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><span style="font-family:  Arial Black ; font-size: small;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-HDL: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 50.0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &gt;35mg% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><b style="font-family:  Arial Black ; font-size: small;">within normal range</b></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><b style="font-family:  Arial Black ; font-size: small;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-LDL: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;143.0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;150mg% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i>near upper limit</i></b></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><b style="font-family:  Arial Black ; font-size: small;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-VLDL: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 14.0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;upto 30mg% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</b><b style="font-family:  Arial Black ; font-size: small;">within normal range</b></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><b style="font-family:  Arial Black ; font-size: small;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-TG: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;70.0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; upto 150mg% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</b><b style="font-family:  Arial Black ; font-size: small;">within normal range</b></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><b style="font-family:  Arial Black ; font-size: small;">RISK FACTOR: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4.1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4.4 - 11 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i>&nbsp;slighly below lower limit</i></b></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><b style="font-family:  Arial Black ; font-size: small;"><i><br></i></b></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><font face="Arial Black" size="2"><b>2)Urine-routine &amp; microscopy: PUS CELL "OCCASIONALLY" found/hpf</b></font></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><b style="font-family:  Arial Black ;">3)CPK- MB,Serum &nbsp; &nbsp; 327 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;24 U/L &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i>&nbsp;Highly Raised</i></b></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><b><i><font face="Arial Black">&nbsp;</font><font face="Narrow">(sample collected on day 2)</font></i></b></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><font face="Georgia" size="2"><b><i><br></i></b></font></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><font face="Georgia" size="2"><b><i>On Day 3 of admission-</i></b></font></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><font face="Arial Black" size="2"><b>-ECHOCARDIOGRAPHY( report enclosed) :</b></font></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><font face="Arial Black" size="2"><b>Impression: CORONARY ARTERY DISEASE - LAD(Left Artery Descending) Akinetic LAD territory with mild Left Ventricular Dysfunction</b></font></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><font face="Arial Black" size="4"><b><u><br></u></b></font></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><font face="Arial Black" size="2"><b>Treatment given after admission:</b></font></div><font face="Arial Black" size="2"><b>Antiplatelets (Tab Clopitab 75mg , Tab Dispirin), Beta Blockers (Tab Met XL 25 mg od), Analgesics (Tab Sorbitrate, Inj Fortwin 1amp stat and sos) and antocoagulant Inj LMWH 6 ml.</b></font><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><b style="font-family:  Arial Black ; font-size: small;"><br></b></div><div><b><font face="Arial Black"><i>Now the question</i></font></b><span style="background-color: rgb(255, 255, 255); color: rgb(34, 34, 34);"><font face="Arial Black"><i> is should we offer thrombolytics to STEMI patients with well developed  q  waves who have arrived in casualty within 9 hours with 50% reduction in chest pain? Do thrombolytics have benefits in terms of patient related outcomes in such situations? Any papers throwing further light on this will be appreciated.<br></i></font></span></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><b style="font-family:  Arial Black ; font-size: small;"><br></b></div><b>Few papers searched and shared here by Dr Abhishek:</b><br><p class="MsoNormal" style="font-size: medium; font-style: normal; font-family:  Times New Roman ; margin-bottom: 0.0001pt; background-color: rgb(213, 213, 213);"><span style="font-size: 7pt; font-family: Arial, sans-serif; color: rgb(85, 85, 85);"><a href="http://www.nlm.nih.gov/" title="National Library of Medicine">US National Library of Medicine</a>&nbsp;,&nbsp;</span><a href="http://www.nih.gov/" title="National Institutes of Health"><span style="font-size: 7pt; font-family: Arial, sans-serif; color: rgb(85, 85, 85);">National Institutes of Health</span></a><span style="font-size: 7pt; font-family: Arial, sans-serif;"><o:p></o:p></span></p><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><span style="font-size: 14pt; font-family: Arial, sans-serif;"></span>Link:&nbsp;<a href="http://www.ncbi.nlm.nih.gov/pubmed/2738273">http://www.ncbi.nlm.nih.gov/pubmed/2738273</a></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;">Related Link-</div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;"><a href="http://circ.ahajournals.org/content/96/6/1776.full" style="font-family: Arial, Verdana; font-size: 10pt;">http://circ.ahajournals.org/content/96/6/1776.full</a></div><div style="font-size: medium; font-style: normal; font-family:  Times New Roman ;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br><b>Patient s perspective: </b><br><br><div align="left"><span style="font-size: 12pt;">Historyuploaded by Miss Anamika Sharma, PCMS Medicine, Research Lab, Bhopal, Fall 2013</span><br><p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; font-family: ">Patient Particulars - Age-49 year, height - 5.5,weight - 63,sex- male</span><span style="font-size: 12pt; font-family: "></span></p><p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: ">History of Illness - 12 sep.2013 ko mujhe 1st timeheart attack aaya,jab mujhe attack aaya to me so raha the.almost time morningke 4 baje huye the.<br>meri nind seene me dard ki wajah se khul gai.4 baje mene dubara sone ki koshishki bat mujhe nind nahi aai.pehle mujhe seene ke bich me dard ho raha the uskebaad mujhe dhere - dhere seene ke aas - pass bhi dard hone laga or hantho mekhichav hone laga.ager me apne hantho ko free rakhta hu to mera dard badta hija raha the.or hantho ko bandh kar rakhu to dard ko thoda aaram mil raha the.morning 4 baje se 8 baje tak dard kam nahi hua.or badta gaya.mene fir pass kelocal doter ko dikhaya to usne ecg ki.     <br>or july 2013 se me barish me geela ho gaya the.to mujhe thand lag kar feveraaya the.uske baad se mujhe fever har kabhi aa jata the.oe mera muh bhi bahut kadwa rehta the. or mere pero ke talweor hantho ki gaddiyo par all time garmahat bani rehti.or mera khana bhi bahutkam ho gaya july se.totaly mene se  khana july se teek se khaya hi nahi.meribhukha bhi kam ho gai. es wajah se weakness bahut aa gai hai.mujhe sochna padtah ki me ager chaluga to gir na jau.aankho me dundhalapan aata hai,or kabhi kabhigas problum bhi hoti hai.   </span></p>                                                                                                                                                </div><br></div>                                                                                                                                                                                                                                                                                                                                                ';
+ 			var values = "issue_description="+escape(issue_description);
+ 			
+ 		    var req=$.ajax({
+ 			        url: "/GetSimilarCases",
+ 			        type: "post",
+ 			        data: values,
+ 			        success: function(health_cases_json_array){
+ 			          // alert("success");	             
+ 			            display_similar_health_cases(health_cases_json_array);
+ 			        },
+ 			        error:function(){
+ 			            console.log("failure");	           
+ 			        }   
+ 		     }); 			
+ 		}
+ 		
+ 		function display_similar_health_cases(similar_health_cases)
+ 		{
+ 			//alert(similar_health_cases[0].title )
+ 			
+ 			  
+ 			var count = 0;
+ 			for( health_case in similar_health_cases  )
+  			{
+ 					if ( ++count > 9) break;
+ 				
+ 					//alert(similar_health_cases[health_case].title);
+ 					var similar_issues_entry=document.createElement("div");
+ 	 	 			var similar_issues_url=document.createElement("a");
+ 	 	 			
+ 	 	 			$(similar_issues_url).append( similar_health_cases[health_case].title);
+ 	 	 			$(similar_issues_url).attr("href", similar_health_cases[health_case].url);
+ 	 	 			$(similar_issues_url).attr("class", "similar_issues_link");
+ 	 	 			$(similar_issues_entry).attr("class", "similar_issues_entry");
+ 	 	 			$(similar_issues_entry).append(similar_issues_url);
+ 	 	 			
+ 	 	 			var parent_div = document.getElementById("similar_issues_list");
+ 	 	 			$(parent_div).append(similar_issues_entry);
+ 	 			
+ 			
+ 			}
+ 			
+ 		}
+            
+        function fetchPosts()
+        {
+            	//alert("Please wait while we refresh")
+            	var finalUrl='/PROCESS/showPostsGraphical.jsp?topic_id=835';
+                var req=$.ajax({
+                              type:"GET",
+                              url:finalUrl,
+                           //   dataType:"script",
+                              success: function(html){
+                           // 	  alert('Request sucessful.');
+                            	  $(".discussion_div").html(html);
+                           // 	  alert(html);
+                                 
+                           },
+                          complete:function(jqXHR, textStatus) {
+                            // alert("request complete "+textStatus);
+                          },
+                         error: function(xhr, textStatus, errorThrown){
+                           //  alert('request failed->'+textStatus);
+                         }             
+                });  
+                     
+          }
+
+            </script>
+
+
+</head>
+
+
+
+
+
+
+<div><link href="../LANDING/bootstrap.css" rel="stylesheet">   
+        <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-31924728-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+ 
+
+    
+     <script type="text/javascript">
+                 function openLoginPopup(){
+                	 alert("Please make sure Pop-ups are enabled in your browser");
+                	  var auth_win=window.open("/AUTH/auth.jsp","Auth", "width=1400,height=500,scrollbars=no");
+                	  var timer = setInterval(function() {   
+                		    if(auth_win.closed) {  
+                		        clearInterval(timer);  
+                		        window.location.reload(); 
+                		    }  
+                		}, 1000);
+               	                 	  
+                  }
+                 
+                 function visitHome() {
+                	 
+                	 window.location="/login.jsp";
+					
+				}
+                 
+	</script>
+    	
+
+<!-- header id="header">
+	
+	  <div id="logo" onclick="visitHome()">	
+	  	<img src="/STATICS/images/MA-logo.jpg" height="50px" width="auto"/>
+	  	
+	  		 <strong>ArogyaUDHC  - User-driven Health care	</strong>
+	  </div>
+	  <div id="all_links">	  		
+				<ul >
+				
+					<li> <a class="popup_login" onclick="openLoginPopup()" href="#"> LOGIN</a>
+					</li>
+				
+					<li> <a style='background-color:red' href="/HOW/how.jsp">HOW</a>
+					</li>
+					
+					<li><a href="/STATICS/what.jsp">WHAT</a>
+					</li>
+					
+					<li><a href="/STATICS/why.jsp">WHY</a>
+					</li>
+					
+					
+					<li><a style='background-color:red'  href="/INPUT/input_directory.jsp">INPUT</a>
+					</li>
+					
+					<li><a href="/PROCESS/process.jsp">PROCESS</a>
+					</li>
+					
+					<li><a href="/SOLUTION/solutionList.jsp">OUTPUT</a>
+					</li>
+			
+						
+					
+				
+					<li><a href="/DASHBOARD/dashboard.jsp">DASHBOARD</a>
+					</li>
+				
+					
+					
+				</ul>	
+		</div> 	  
+	
+</header-->
+
+
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+
+      <div class="navbar-inner">
+        <div class="container">
+       
+          
+          <a class="brand" href="../login.jsp.html">
+          		
+          	<img src="../STATICS/images/MA-logo.jpg" height="10px" width="30px"/>
+	  	
+	  		 <strong>ArogyaUDHC	</strong>
+	     </a>
+          <div class="nav-collapse collapse">
+            <ul class="nav" >
+              
+				<li> <a class="popup_login btn btn-lg"" onclick="openLoginPopup()" href="displayIssueGraphically.jsp-topic_id=835&solution_id=91.html#"> LOGIN</a>
+					</li>
+				
+					<li> <a class="btn btn-lg" href="../HOW/how.jsp.html">HOW</a>
+					</li>
+					
+					<li><a class="btn btn-lg" href="../STATICS/what.jsp.html">WHAT</a>
+					</li>
+					
+					<li><a class="btn  btn-lg" href="../STATICS/why.jsp.html">WHY</a>
+					</li>
+					
+					
+					<li><a  class="btn  btn-lg" href="input_directory.jsp.html">INPUT</a>
+					</li>
+					
+					<li><a class="btn btn-lg" href="../PROCESS/process.jsp.html">PROCESS</a>
+					</li>
+					
+					<li><a class="btn btn-lg" href="../SOLUTION/solutionList.jsp.html">OUTPUT</a>
+					</li>
+					<!-- 
+			
+					 -->	
+					
+				
+					<li><a class="btn btn-lg" href="../DASHBOARD/dashboard.jsp.html">DASHBOARD</a>
+					</li>
+
+
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      
+    </div>
+ </div>
+
+<style>
+
+
+
+#header{
+	z-index:999;
+	position:fixed;
+	background-color: #F1F1F1;	
+	 border: 1px solid grey;
+	 padding:10px;
+	 width:100%;
+	 margin: auto;top:0;
+}
+
+#logo{
+
+	cursor:pointer;
+
+	float:left;
+	width:30%;
+	
+	background: rgb(246,248,249); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(246,248,249,1) 0%, rgba(229,235,238,1) 50%, rgba(215,222,227,1) 51%, rgba(245,247,249,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(246,248,249,1)), color-stop(50%,rgba(229,235,238,1)), color-stop(51%,rgba(215,222,227,1)), color-stop(100%,rgba(245,247,249,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#f5f7f9',GradientType=0 ); /* IE6-9 */
+	
+}
+#all-links{
+	
+
+}
+#all_links ul li{
+	display: inline;
+
+} 
+
+#all_links ul li a{
+	background-color: #174FF5;
+	color: white;
+	text-decoration: none;
+	padding: 10px;
+	border-radius: 5px;
+	font-weight: bold;
+
+}
+
+#all_links ul li a:hover{
+	background-color: green;
+	color: white;
+	
+
+}
+	
+</style></div>
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+<br><br>
+<div id="gallery">
+	<ul>
+		
+
+		<li><a class="report_image"
+			href="../ViewImage-file_id=871&scale=800.jpeg"
+			title="ECG report"> <img
+				src='../ViewImage-file_id=871&scale=500.jpeg'
+				height='200px' width='200px' />
+		</a></li>
+
+
+		
+
+		<li><a class="report_image"
+			href="../ViewImage-file_id=872&scale=800.jpeg"
+			title="ECG report"> <img
+				src='../ViewImage-file_id=872&scale=500.jpeg'
+				height='200px' width='200px' />
+		</a></li>
+
+
+		
+
+		<li><a class="report_image"
+			href="../ViewImage-file_id=874&scale=800.png"
+			title="Echo report"> <img
+				src='../ViewImage-file_id=874&scale=500.png'
+				height='200px' width='200px' />
+		</a></li>
+
+
+		
+
+		<li><a class="report_image"
+			href="../ViewImage-file_id=875&scale=800.png"
+			title="Echo report"> <img
+				src='../ViewImage-file_id=875&scale=500.png'
+				height='200px' width='200px' />
+		</a></li>
+
+
+		
+	</ul>
+</div>
+
+
+
+
+
+<strong> <br>
+<br>
+<br>
+
+
+<br>
+
+
+	<div align="center" id="issue_metadata">
+
+		<br>
+		<a id="edit_link" class="btn btn-info" 
+			href="../UPLOADER/care-seeker-input-edit.jsp-topic_id=835.html">Edit </a> <br>
+		<br>
+
+	<div id="topic_div">
+		50 year old man with an ST elevation heart attack STEMI
+	</div>
+	<hr></hr>
+		
+</strong>
+
+<br> Patient name : &nbsp;
+
+<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=ALBIZIA462CHINENSIS.html">
+  		ALBIZIA462CHINENSIS
+  		</a>
+  		
+
+<br>
+
+<!-- Uploaded by: docabhi2012@gmail.com  -->
+<br>
+
+
+<br>
+<br>
+
+<div align="left">
+
+	                        
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                        <font style="font-size: 10pt; font-style: normal; font-family: Arial, Verdana;" face="Arial Black"><b>History submitted by Dr Abhishek Jain, INTERN at PCMS &amp; R.C. ,Bhopal</b></font><div style="font-size: 10pt; font-style: normal; font-family: 'Times New Roman';"><font face="Arial Black"><b><br></b></font></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><font face="Arial Black"><b><font size="2"><i>A male patient aged 50 years was admitted to our Hospital in autumn 2013 with Chief complaints of Chest pain which was Severe in intensity, diffusely located on the LEFT side of chest, associated with a feeling of heaviness over that region.<br><br>Chest pain was also associated with PROFUSE SWEATING and pain&nbsp;occurred in patient while performing his daily routine activities.Initially pain subsided in terms of Intensity on its Own, after 10 mins of its onset and further decreased upon intake of a medication ,taken Sub-lingually.</i></font></b></font></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><font face="Arial Black"><b><font size="2"><i><br>Patient was admitted to our hospital after 8 to 9 hours of first episode of Chest pain and sweating, though ECG was done within 1 hour of this episode nearby his home at a clinic (see attached ECG after one hour...the dates on the ECG are that of the scanner and not the actual date the ECG was taken...). <br><br>The patient had 50% reduction of his chest pain and repeat ECG showed further appearance of q waves not just in V1 and V2 as in the ECG after one hour but also in V3.V4,V5. ST elevation was persistent and &gt;5mm in all leads.<br></i></font></b></font></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><font face="Arial Black"><b><font size="2"><i><br>OTHER significant History- Patient has an addiction to tobacco for past 20 years.</i></font></b></font></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><font face="Arial Black"><b><font size="2"><i><br></i></font></b></font></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><font face="Arial Black" size="2"><b>Examination of Patient-</b></font></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><font face="Arial Black" size="2"><b>Day 1 of admission:</b></font></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><ul><li><b style="font-family: 'Arial Black'; font-size: small;">Pulse- 70/min, BP-110/80 mm of Hg , RR-18/min, Temp - afebrile .</b></li><li><b style="font-family: 'Arial Black'; font-size: small;">Clubbing,Pallor, Edema , Cyanosis, Tremors - absent</b></li><li><b style="font-family: 'Arial Black'; font-size: small;">RS: B/L chest - CLEAR, no added sound; CVS: S1, S2 audible ; P/A system- soft,non tender, Spleen &amp; Liver not palpable ;CNS :Pt is conscious,oriented and no Focal defect seen, patient could easily narrate his History.</b></li></ul></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><font face="Arial Black" size="2"><b>Investigations done-</b></font></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><font face="Georgia" size="2"><b><i>On Day 1 of admission-</i></b></font></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><b style="font-family: 'Arial Black'; font-size: small;">1</b><b style="font-family: 'Arial Black';"><font size="2">)CBP:-</font></b></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><b><u><font face="Impact"><font size="4">Parameter: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Result: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Ref. Range &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Opinion &nbsp; &nbsp; &nbsp;</font>&nbsp;</font><font style="font-size: small;" face="Arial Black">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</font></u><font style="font-size: small;" face="Arial Black">&nbsp; &nbsp; &nbsp;&nbsp;</font></b></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><font face="Arial Black" size="2"><b>-WBC: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 9.3 x 10^9/L &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4 to 10.0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;within normal range</b></font></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><font face="Arial Black" size="2"><b>-DLC: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; P- 76%, L-21%, M-1%, E-2%</b></font></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><font face="Arial Black" size="2"><b>-Hb: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;12.5 g/dl &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;11- 16.0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; within normal range</b></font></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><font face="Arial Black" size="2"><b>-RBC: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4.11 X 10^12/L &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3.50-5.50 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</b></font><b style="font-family: 'Arial Black'; font-size: small;">within normal range</b></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><font face="Arial Black" size="2"><b>-PLT: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 206 x 10^9/L &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;100-300 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</b></font><b style="font-family: 'Arial Black'; font-size: small;">within normal range</b></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><b style="font-family: 'Arial Black'; font-size: small;"><br></b></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><font face="Arial Black" size="2"><b>2)RANDOM BLOOD SUGAR: 113.O mg% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;140mg% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</b></font><b style="font-family: 'Arial Black'; font-size: small;">within normal range</b></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><b style="font-family: 'Arial Black'; font-size: small;">3)Renal function test:</b></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><b style="font-family: 'Arial Black'; font-size: small;">-Blood Urea &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;27.8mg% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 10 - 40mg% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</b><b style="font-family: 'Arial Black'; font-size: small;">within normal range</b></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><font face="Arial Black" size="2"><b>-S.&nbsp;Creatinine &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.0mg% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0.7 - 1.4mg% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</b></font><b style="font-family: 'Arial Black'; font-size: small;">within normal range</b></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><b style="font-family: 'Arial Black'; font-size: small;"><br></b></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><b style="font-size: small;"><font face="Georgia"><i>On Day 2 of admission-</i></font></b></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><font face="Arial Black">1)<font size="2">Lipid Profile:</font></font></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><font face="Arial Black" size="2">Serum -Cholesterol: &nbsp; &nbsp;207.0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;150-250mg% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</font><b style="font-family: 'Arial Black'; font-size: small;">within normal range</b></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><span style="font-family: 'Arial Black'; font-size: small;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-HDL: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 50.0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &gt;35mg% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><b style="font-family: 'Arial Black'; font-size: small;">within normal range</b></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><b style="font-family: 'Arial Black'; font-size: small;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-LDL: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;143.0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;150mg% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i>near upper limit</i></b></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><b style="font-family: 'Arial Black'; font-size: small;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-VLDL: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 14.0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;upto 30mg% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</b><b style="font-family: 'Arial Black'; font-size: small;">within normal range</b></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><b style="font-family: 'Arial Black'; font-size: small;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-TG: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;70.0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; upto 150mg% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</b><b style="font-family: 'Arial Black'; font-size: small;">within normal range</b></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><b style="font-family: 'Arial Black'; font-size: small;">RISK FACTOR: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4.1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4.4 - 11 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i>&nbsp;slighly below lower limit</i></b></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><b style="font-family: 'Arial Black'; font-size: small;"><i><br></i></b></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><font face="Arial Black" size="2"><b>2)Urine-routine &amp; microscopy: PUS CELL "OCCASIONALLY" found/hpf</b></font></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><b style="font-family: 'Arial Black';">3)CPK- MB,Serum &nbsp; &nbsp; 327 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;24 U/L &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i>&nbsp;Highly Raised</i></b></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><b><i><font face="Arial Black">&nbsp;</font><font face="Narrow">(sample collected on day 2)</font></i></b></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><font face="Georgia" size="2"><b><i><br></i></b></font></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><font face="Georgia" size="2"><b><i>On Day 3 of admission-</i></b></font></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><font face="Arial Black" size="2"><b>-ECHOCARDIOGRAPHY( report enclosed) :</b></font></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><font face="Arial Black" size="2"><b>Impression: CORONARY ARTERY DISEASE - LAD(Left Artery Descending) Akinetic LAD territory with mild Left Ventricular Dysfunction</b></font></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><font face="Arial Black" size="4"><b><u><br></u></b></font></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><font face="Arial Black" size="2"><b>Treatment given after admission:</b></font></div><font face="Arial Black" size="2"><b>Antiplatelets (Tab Clopitab 75mg , Tab Dispirin), Beta Blockers (Tab Met XL 25 mg od), Analgesics (Tab Sorbitrate, Inj Fortwin 1amp stat and sos) and antocoagulant Inj LMWH 6 ml.</b></font><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><b style="font-family: 'Arial Black'; font-size: small;"><br></b></div><div><b><font face="Arial Black"><i>Now the question</i></font></b><span style="background-color: rgb(255, 255, 255); color: rgb(34, 34, 34);"><font face="Arial Black"><i> is should we offer thrombolytics to STEMI patients with well developed 'q' waves who have arrived in casualty within 9 hours with 50% reduction in chest pain? Do thrombolytics have benefits in terms of patient related outcomes in such situations? Any papers throwing further light on this will be appreciated.<br></i></font></span></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><b style="font-family: 'Arial Black'; font-size: small;"><br></b></div><b>Few papers searched and shared here by Dr Abhishek:</b><br><p class="MsoNormal" style="font-size: medium; font-style: normal; font-family: 'Times New Roman'; margin-bottom: 0.0001pt; background-color: rgb(213, 213, 213);"><span style="font-size: 7pt; font-family: Arial, sans-serif; color: rgb(85, 85, 85);"><a href="http://www.nlm.nih.gov/" title="National Library of Medicine">US National Library of Medicine</a>&nbsp;,&nbsp;</span><a href="http://www.nih.gov/" title="National Institutes of Health"><span style="font-size: 7pt; font-family: Arial, sans-serif; color: rgb(85, 85, 85);">National Institutes of Health</span></a><span style="font-size: 7pt; font-family: Arial, sans-serif;"><o:p></o:p></span></p><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><span style="font-size: 14pt; font-family: Arial, sans-serif;"></span>Link:&nbsp;<a href="http://www.ncbi.nlm.nih.gov/pubmed/2738273">http://www.ncbi.nlm.nih.gov/pubmed/2738273</a></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';">Related Link-</div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';"><a href="http://circ.ahajournals.org/content/96/6/1776.full" style="font-family: Arial, Verdana; font-size: 10pt;">http://circ.ahajournals.org/content/96/6/1776.full</a></div><div style="font-size: medium; font-style: normal; font-family: 'Times New Roman';">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br><b>Patient's perspective: </b><br><br><div align="left"><span style="font-size: 12pt;">History
+uploaded by Miss Anamika Sharma, PCMS Medicine, Research Lab, Bhopal, Fall 2013</span><br><p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; font-family: ">
+Patient Particulars - Age-49 year, height - 5.5,weight - 63,sex
+- male</span><span style="font-size: 12pt; font-family: "></span>
+
+</p><p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: ">History of Illness - 12 sep.2013 ko mujhe 1st time
+heart attack aaya,jab mujhe attack aaya to me so raha the.almost time morning
+ke 4 baje huye the.<br>
+meri nind seene me dard ki wajah se khul gai.4 baje mene dubara sone ki koshish
+ki bat mujhe nind nahi aai.pehle mujhe seene ke bich me dard ho raha the uske
+baad mujhe dhere - dhere seene ke aas - pass bhi dard hone laga or hantho me
+khichav hone laga.ager me apne hantho ko free rakhta hu to mera dard badta hi
+ja raha the.or hantho ko bandh kar rakhu to dard ko thoda aaram mil raha the.
+morning 4 baje se 8 baje tak dard kam nahi hua.or badta gaya.mene fir pass ke
+local doter ko dikhaya to usne ecg ki.     <br>
+or july 2013 se me barish me geela ho gaya the.to mujhe thand lag kar fever
+aaya the.uske baad se mujhe fever har kabhi aa jata the.oe mera muh bhi bahut kadwa rehta the. or mere pero ke talwe
+or hantho ki gaddiyo par all time garmahat bani rehti.or mera khana bhi bahut
+kam ho gaya july se.totaly mene se  khana july se teek se khaya hi nahi.meri
+bhukha bhi kam ho gai. es wajah se weakness bahut aa gai hai.mujhe sochna padta
+h ki me ager chaluga to gir na jau.aankho me dundhalapan aata hai,or kabhi kabhi
+gas problum bhi hoti hai.   </span></p>
+
+
+                        
+                        
+                        
+                        
+                        
+                        
+
+</div><br></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
+</div>
+
+<script type="text/javascript">
+	
+
+</script>
+
+<hr></hr>
+
+<div id="similar_issues_div" align="left">
+	
+	<h4> Similar health cases from <a href="http://www.bmj.com/">BMJ </a> </h4> <br>
+	<div id="similar_issues_list">
+		
+		
+	
+	</div>
+</div>
+
+
+</div>
+
+<br>
+<br>
+
+
+
+<br>
+<br>
+
+
+
+
+
+</html>

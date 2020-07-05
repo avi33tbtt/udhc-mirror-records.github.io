@@ -1,0 +1,1190 @@
+
+
+
+
+<script>
+    
+   
+function uploadImage()
+{
+    
+            var formObject=document.getElementById("imageForm");
+            YAHOO.util.Connect.setForm(formObject,true);
+            
+         //   context_path=document.getElementById("context_path").value;//.toString();
+            var cObj = YAHOO.util.Connect.asyncRequest('POST', '/UploadImage', callback_uploadImage);
+            document.getElementById("upload_status").innerHTML="<img src='http://www.tothepc.com/pic/loader-gif-images1.gif'>";
+            
+            
+            
+            
+
+    // attach form object
+    // send to server
+    
+}
+    
+    
+</script>    
+<!DOCTYPE html>
+<html>
+
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+ <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+ <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+
+<script src="http://yui.yahooapis.com/3.5.0/build/yui/yui-min.js"></script>
+  
+    
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/menu/assets/skins/sam/menu.css" />
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/button/assets/skins/sam/button.css" />
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/fonts/fonts-min.css" />
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/container/assets/skins/sam/container.css" />
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/editor/assets/skins/sam/editor.css" />
+<script type="text/javascript" src="http://yui.yahooapis.com/2.9.0/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.9.0/build/element/element-min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.9.0/build/container/container-min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.9.0/build/menu/menu-min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.9.0/build/button/button-min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.9.0/build/editor/editor-min.js"></script>
+
+
+
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/fonts/fonts-min.css" />
+<script type="text/javascript" src="http://yui.yahooapis.com/2.9.0/build/yahoo/yahoo-min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.9.0/build/event/event-min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.9.0/build/connection/connection-min.js"></script>
+
+<link rel="stylesheet" href="../mystyle.css" type="text/css" />
+<script type="text/javascript" src="script.js"></script>
+
+
+ 
+ 
+
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Health Records Interface</title>
+    </head>
+    
+    
+    <body>
+        
+        <input type="hidden" id="context_path" value="">
+                <div><link href="../LANDING/bootstrap.css" rel="stylesheet">   
+        <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-31924728-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+ 
+
+    
+     <script type="text/javascript">
+                 function openLoginPopup(){
+                	 alert("Please make sure Pop-ups are enabled in your browser");
+                	  var auth_win=window.open("/AUTH/auth.jsp","Auth", "width=1400,height=500,scrollbars=no");
+                	  var timer = setInterval(function() {   
+                		    if(auth_win.closed) {  
+                		        clearInterval(timer);  
+                		        window.location.reload(); 
+                		    }  
+                		}, 1000);
+               	                 	  
+                  }
+                 
+                 function visitHome() {
+                	 
+                	 window.location="/login.jsp";
+					
+				}
+                 
+	</script>
+    	
+
+<!-- header id="header">
+	
+	  <div id="logo" onclick="visitHome()">	
+	  	<img src="/STATICS/images/MA-logo.jpg" height="50px" width="auto"/>
+	  	
+	  		 <strong>ArogyaUDHC  - User-driven Health care	</strong>
+	  </div>
+	  <div id="all_links">	  		
+				<ul >
+				
+					<li> <a class="popup_login" onclick="openLoginPopup()" href="#"> LOGIN</a>
+					</li>
+				
+					<li> <a style='background-color:red' href="/HOW/how.jsp">HOW</a>
+					</li>
+					
+					<li><a href="/STATICS/what.jsp">WHAT</a>
+					</li>
+					
+					<li><a href="/STATICS/why.jsp">WHY</a>
+					</li>
+					
+					
+					<li><a style='background-color:red'  href="/INPUT/input_directory.jsp">INPUT</a>
+					</li>
+					
+					<li><a href="/PROCESS/process.jsp">PROCESS</a>
+					</li>
+					
+					<li><a href="/SOLUTION/solutionList.jsp">OUTPUT</a>
+					</li>
+			
+						
+					
+				
+					<li><a href="/DASHBOARD/dashboard.jsp">DASHBOARD</a>
+					</li>
+				
+					
+					
+				</ul>	
+		</div> 	  
+	
+</header-->
+
+
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+
+      <div class="navbar-inner">
+        <div class="container">
+       
+          
+          <a class="brand" href="../login.jsp.html">
+          		
+          	<img src="../STATICS/images/MA-logo.jpg" height="10px" width="30px"/>
+	  	
+	  		 <strong>ArogyaUDHC	</strong>
+	     </a>
+          <div class="nav-collapse collapse">
+            <ul class="nav" >
+              
+				<li> <a class="popup_login btn btn-lg"" onclick="openLoginPopup()" href="displayMyInputs.jsp.html#"> LOGIN</a>
+					</li>
+				
+					<li> <a class="btn btn-lg" href="../HOW/how.jsp.html">HOW</a>
+					</li>
+					
+					<li><a class="btn btn-lg" href="../STATICS/what.jsp.html">WHAT</a>
+					</li>
+					
+					<li><a class="btn  btn-lg" href="../STATICS/why.jsp.html">WHY</a>
+					</li>
+					
+					
+					<li><a  class="btn  btn-lg" href="input_directory.jsp.html">INPUT</a>
+					</li>
+					
+					<li><a class="btn btn-lg" href="../PROCESS/process.jsp.html">PROCESS</a>
+					</li>
+					
+					<li><a class="btn btn-lg" href="../SOLUTION/solutionList.jsp.html">OUTPUT</a>
+					</li>
+					<!-- 
+			
+					 -->	
+					
+				
+					<li><a class="btn btn-lg" href="../DASHBOARD/dashboard.jsp.html">DASHBOARD</a>
+					</li>
+
+
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      
+    </div>
+ </div>
+
+<style>
+
+
+
+#header{
+	z-index:999;
+	position:fixed;
+	background-color: #F1F1F1;	
+	 border: 1px solid grey;
+	 padding:10px;
+	 width:100%;
+	 margin: auto;top:0;
+}
+
+#logo{
+
+	cursor:pointer;
+
+	float:left;
+	width:30%;
+	
+	background: rgb(246,248,249); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(246,248,249,1) 0%, rgba(229,235,238,1) 50%, rgba(215,222,227,1) 51%, rgba(245,247,249,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(246,248,249,1)), color-stop(50%,rgba(229,235,238,1)), color-stop(51%,rgba(215,222,227,1)), color-stop(100%,rgba(245,247,249,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#f5f7f9',GradientType=0 ); /* IE6-9 */
+	
+}
+#all-links{
+	
+
+}
+#all_links ul li{
+	display: inline;
+
+} 
+
+#all_links ul li a{
+	background-color: #174FF5;
+	color: white;
+	text-decoration: none;
+	padding: 10px;
+	border-radius: 5px;
+	font-weight: bold;
+
+}
+
+#all_links ul li a:hover{
+	background-color: green;
+	color: white;
+	
+
+}
+	
+</style></div>
+      
+      
+      <br><br><br><br>
+      
+
+
+<div class="popup_login" align='center'>
+  		<strong> PLEASE LOGIN TO CONTINUE  		</strong> <br><br>
+  		<a href="displayMyInputs.jsp.html#">
+  		
+  		<img src="../STATICS/images/openid.png">
+  		
+  		</a>
+  	</div>
+  		
+  		
+               <div  id="displayInputs_add_new" > <a class="btn" href="care-seeker-input.jsp.html"> <i class="icon-plus"></i> &nbsp; ADD A NEW HEALTH CASE ? </a>
+                   
+                   &nbsp;
+                   <a class="btn" href="input_directory.jsp.html"><i class="icon-inbox"></i> &nbsp; OPEN ALL RECORDS </a>
+                   
+                   
+                   
+                   <br>
+                <br></div>
+
+        
+        <div id="displayInputs_narrative_list">
+        
+                <div align="center" id="displayInputs_heading"> <b> HEALTH CASES ADDED BY ME </b> </div>
+            
+            
+
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(800)">: &nbsp; A middle aged man with difficulty in breathing relieved only on lying down </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(818)">: &nbsp; 35 year old man with stomach pain </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(823)">: &nbsp; 70 year old woman with vertigo, sweating, constipation since 3 days </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(826)">: &nbsp; 21 year old man with epilepsy/seizure/mirgi </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(827)">: &nbsp; 60 year old man with chest and stomach pain for two weeks </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(846)">: &nbsp; 20 year old woman with stomach ache </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(852)">: &nbsp; A 53 year old man with gradual Dysphagia </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(869)">: &nbsp; 50 years old man with weakness and high BP </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(871)">: &nbsp; Ortho  problam </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(874)">: &nbsp; 27 years old woman with abdoman pain </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(881)">: &nbsp; 37 year old man with pate dard (pain abdomen) </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(930)">: &nbsp; 45 years old woman with diabetes and hypertension for 6 months </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(940)">: &nbsp; 36  years old woman with body pain </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(943)">: &nbsp; 55 years old woman with urinary pain since one year  </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(946)">: &nbsp; patient with multi system involvement </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(947)">: &nbsp; patient with multi system involvement </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(948)">: &nbsp; patient with multi system involvement </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(959)">: &nbsp; 45 year old man with femur tibia fibula and draining sinus </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(960)">: &nbsp; 45 year old man with femur tibia fibula and draining sinus </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(965)">: &nbsp; 45 years old woman with backache since 20 years </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(967)">: &nbsp; 35 year old woman with remarkable deep tendon relfexes and edema of face and legs along with frequent urination and pain in lower abdomen </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(968)">: &nbsp; 75 years old man with recent right leg swelling, back ache, renal failure, acidosis and diabetes for many years </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(989)">: &nbsp; PAIN PRABLAM </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(991)">: &nbsp;  </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1004)">: &nbsp; Excessive Bleeding P\V & Fatigue since last 6 months </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1005)">: &nbsp; fever and breathlessness </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1007)">: &nbsp; fever and breathlessness </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1012)">: &nbsp; Breathlessness-10-12 yrs(increased since 2 days) with cough with sputum </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1013)">: &nbsp; Breathlessness-10-12 yrs(increased since 2 days) with cough with sputum </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1015)">: &nbsp; Fever, Pain in Abdomen, Vomiting since 15 days </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1019)">: &nbsp; Head pain </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1025)">: &nbsp; Paraplegia since 45 days & loss of sensation of Both the lower limbs. </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1026)">: &nbsp; Paraplegia since 45 days & loss of sensation of Both the lower limbs. </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1027)">: &nbsp; Paraplegia since 45 days & loss of sensation of Both the lower limbs. </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1031)">: &nbsp; 36 year old woman with chest pain  </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1032)">: &nbsp; 36 year old woman with chest pain  </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1038)">: &nbsp; case of ??menigioencephalitis ??alcohal withdrawl  </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1039)">: &nbsp; case of ??menigioencephalitis ??alcohal withdrawl  </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1044)">: &nbsp; PULMONARY TB With ABDOMINAL KOCH'S ON CAT-I  ATT. </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1048)">: &nbsp; 42 yrs old male with cough and fever since 2 months  </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1049)">: &nbsp; 10 yrs old female presented with cough,fever, weight loss,anorexia,and depression   </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1052)">: &nbsp; allergic rhinitis age 23 years male person </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1060)">: &nbsp; CVA-Left GANGLIOTHALAMIC BLEED With HTN With # Right NECK OF FEMUR </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1061)">: &nbsp; CVA-Left GANGLIOTHALAMIC BLEED With HTN With # Right NECK OF FEMUR </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1062)">: &nbsp; CVA-Left GANGLIOTHALAMIC BLEED With HTN With # Right NECK OF FEMUR </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1075)">: &nbsp; 66 year old woman with swelling in legs relieved somewhat after urination </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1078)">: &nbsp; 37 year old woman with recent cough and breathlessness and old pulmonary tuberculosis </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1080)">: &nbsp; 55 year old woman with nodular swellings in the body </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1092)">: &nbsp; 50 yr male with TB </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1093)">: &nbsp; 50 yr man with recurrent hemoptysis and incomplete TB treatment 4 years back </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1094)">: &nbsp; 35 year female with fever associated with chronic diarrhoea </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1102)">: &nbsp; A young man with history of chronic alcoholism, sever abdominal pain, respiratory distress and Massive right sided hemorrhagic pleural effusion. </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1103)">: &nbsp; A young man with history of chronic alcoholism, sever abdominal pain, respiratory distress and Massive right sided hemorrhagic pleural effusion. </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1104)">: &nbsp; A young man with history of chronic alcoholism, sever abdominal pain, respiratory distress and Massive right sided hemorrhagic pleural effusion. </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1105)">: &nbsp; diabities and blood pressure </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1109)">: &nbsp; a 18 yrs young male with right upper limb hemiparesis,epileptic seizures and re-stroke </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1110)">: &nbsp; a 18 yrs young male with right upper limb hemiparesis,epileptic seizures and re-stroke </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1111)">: &nbsp; a 18 yrs young male with right upper limb hemiparesis,epileptic seizures and re-stroke </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1112)">: &nbsp; a 18 yrs young male with right upper limb hemiparesis,epileptic seizures and re-stroke </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1113)">: &nbsp; a 18 yrs young male with right upper limb hemiparesis,epileptic seizures and re-stroke </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1114)">: &nbsp; 18 yrs young man with seizures following febrile illness along with forgetfullness and weakness in all 4 limbs since 8 years </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1125)">: &nbsp; Sugar prablam </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1127)">: &nbsp; age-20,c/o-pain in abdomen ,swelling in both lower limb,with CAD </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1128)">: &nbsp; age-20,c/o-pain in abdomen ,swelling in both lower limb,with CAD </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1129)">: &nbsp; age-20,c/o-pain in abdomen ,swelling in both lower limb,with CAD </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1131)">: &nbsp; 55 year old man with quadriplegia and dementia. </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1133)">: &nbsp; Gayne prablom & Azma </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1136)">: &nbsp; Oll Body pain & Ortho problam </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1147)">: &nbsp; Norve  Prablam </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1150)">: &nbsp; Sugar prablam </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1155)">: &nbsp; 42 year old woman with seizures , fever and disorientation </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1160)">: &nbsp; Kidney  Steon  & Back  pain </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1163)">: &nbsp; a 35 yr old female presents with complaints of stomache and gabaharat since 15 days </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1164)">: &nbsp; a 35 yr old female presents with complaints of stomache and gabaharat since 15 days </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1165)">: &nbsp; a 35 yr old female presents with complaints of stomache and gabaharat since 15 days </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1166)">: &nbsp; a 35 yr old female presents with complaints of stomache and gabaharat since 15 days </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1170)">: &nbsp; 20 year old woman with cough and fever for 3 months </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1171)">: &nbsp; 42 yr old woman with weight gain and shortness of breath after having been treated for TB 20 years back </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1177)">: &nbsp; a 60yr old female present with heart disease </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1202)">: &nbsp; chest pain, back bone muscules pain in winter </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1203)">: &nbsp; chest pain, back bone muscules pain in winter </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1217)">: &nbsp; Urinary incontinence with lower limb weakness and bone pains. </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1235)">: &nbsp; a 45 yr old male with the complaints of pain in abdomen, loose motion fever and oral ulceration </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1245)">: &nbsp; Pulmonary Koch's with Emcyema thoracis </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1246)">: &nbsp; Pulmonary Koch's with Emcyema thoracis </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1251)">: &nbsp; A 66 year old man with diabetes since 5 years and recent cataract </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1270)">: &nbsp; A 50year old woman with Diabetes since 18 years, Breathlessness since 20 years and Back pain since 4 months </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1281)">: &nbsp;  </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1285)">: &nbsp;  </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1298)">: &nbsp; 25 year old woman with severe chest pain and headache </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1309)">: &nbsp;  A patient with stroke </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1310)">: &nbsp;  A patient with stroke </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1311)">: &nbsp;  A patient with stroke </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1313)">: &nbsp; An 85 year old man presenting with generalized weakness, fever, cough, swelling left lower limb </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1314)">: &nbsp; 16 year old boy with fever and arthritis since the age of 2 years </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1327)">: &nbsp; wHared prablam & Gas problam </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1361)">: &nbsp; Brain Stoc </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1370)">: &nbsp; A 57 year old man having recurrent abdominal pain since 1984 and recent anemia and black stools </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1388)">: &nbsp; A 55 year old woman with back pain, chest pain since 5 year. </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1399)">: &nbsp; Cardiologist      Prblam </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1404)">: &nbsp; Ortho   Problam   &  Pain </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1405)">: &nbsp; Ortho   Problam   &  Pain </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1407)">: &nbsp; Norve  &   Urine  Prablom </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1422)">: &nbsp; A 45 year ol woman having fever problem since 2 year & lower limbs pain problem 4 year </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1423)">: &nbsp; A 44 year old woman with menorrhagia (Bhopal update) </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1426)">: &nbsp; A 54 year old man with chest pain & heart problem since 4 year's </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1430)">: &nbsp; Ortho   Problam   &  Pain </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1432)">: &nbsp; swelling right side of neck </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1434)">: &nbsp; Round list 1st Saturday autumn 2014 </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1446)">: &nbsp; Patient round list 1st wednesday autumn 2014 </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1451)">: &nbsp; ASTHMA  </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1452)">: &nbsp; ASTHMA  </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1458)">: &nbsp; Narve Problem & Brain Problem </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1487)">: &nbsp; patient round list 2nd Thursday & Friday in fall-winter 2014 </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1488)">: &nbsp; A 36 year old woman with right uretric calculus & post DJ stenting complication since 2 months </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1489)">: &nbsp; A 36 year old woman with an enlarged thyroid and pain since 3 years </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1490)">: &nbsp;  Ortho  Problam </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1493)">: &nbsp; Azma  Problam </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1500)">: &nbsp; A 78 year old woman with a cutaneous ulcer as well as a duodenal ulcer due to therapy and renal failure </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1510)">: &nbsp; Liver  & Urinal   &    piles  problam </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1512)">: &nbsp; A 60 year old man with right side lower limb pain & swelling since 6-7 years </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1533)">: &nbsp; A 50 year old man with left hemiparesis since 1.5 years and recent episodes of seizures </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1534)">: &nbsp; A 50 year old woman with paralysis and numbness of both legs since 6 months </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1538)">: &nbsp; Excessive hair-fall and weakness - 25-year old woman </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1543)">: &nbsp; A 44 year old man with left eye visual loss since 2006 and quadriparesis and urinary hesitancy since 4 years </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1548)">: &nbsp; Golbladar  Stone &  Ortho  Prablam </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1551)">: &nbsp; A 63 year old man with distended abdomen since 15 days </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1559)">: &nbsp; Novre &  Gayne  Problam </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1564)">: &nbsp; Gastritis & B.P  Poblam </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1570)">: &nbsp; Sugar Problam </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1581)">: &nbsp; A 36 year old man with cough since 2 or 3 months </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1582)">: &nbsp; Norve  &  E.N.T  Problam </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1596)">: &nbsp; Cardiologhit  Prablam </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1598)">: &nbsp; A 60 year old woman with leprosy problem since 20 year's & ABD pain problem since 2 month's </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1602)">: &nbsp; Tumar & Kdnye   Problam </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1605)">: &nbsp; Cofe  problam </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1612)">: &nbsp; A 45 year old man with Rt. sided hemiperesis since 2 year's </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1613)">: &nbsp; A 56 year old man with extreme fatigue since 1 month and difficulty in walking since 20 years </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1619)">: &nbsp; A 70 year old man louse motion since 3 month   </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1620)">: &nbsp; A 70 year old man louse motion since 3 month   </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1621)">: &nbsp; A 70 year old man louse motion since 3 month   </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1622)">: &nbsp; A 70 year old man louse motion since 3 month   </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1623)">: &nbsp; A 70 year old man louse motion since 3 month   </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1628)">: &nbsp; A 75 year old man with  </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1629)">: &nbsp; A 75 year old man with  </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1630)">: &nbsp; A 50 year old woman with all body-ache problem since 1 year  </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1644)">: &nbsp; Pain of chast </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1645)">: &nbsp; Pain of chast </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1653)">: &nbsp; Golbladar Stone &  Uterusa   Chiest Problam </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1660)">: &nbsp; A 40 year old woman with abdominal pain since 10 years and recent hypothyroidism </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1678)">: &nbsp; Gastrik Prablam </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1731)">: &nbsp; Norve Problam </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1740)">: &nbsp; chast  pain </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1836)">: &nbsp; A 15 years old man with </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1864)">: &nbsp; Calcium &Potassium Problam </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1869)">: &nbsp; Filarir  &  Oll  Boday  Pain </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1870)">: &nbsp; Filarir  &  Oll  Boday  Pain </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1873)">: &nbsp; Azma   Broncatis & Sugar </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1876)">: &nbsp; Kidney  Stone   &     Gas </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1885)">: &nbsp; Norve  &  Meness  Problam </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1886)">: &nbsp; Skin  &  GAYNE  Problam </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1891)">: &nbsp; Age  Anupathay    Weght    bashe   &  and   Absence  Manid. </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1895)">: &nbsp; Raight lagePain & B P    Prablam </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1903)">: &nbsp; Neuro  Prablam &  Pain </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1905)">: &nbsp; Cadyalogist   &  Left  Sait    Pain. </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1913)">: &nbsp; Urologe Problam   </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1930)">: &nbsp; Nerve   &  Lage   Pain </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1932)">: &nbsp; Skin &  Ganye    Problam </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1944)">: &nbsp;  </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1948)">: &nbsp; Cervical  growth  amaultiple  Cholelithiasis   &  Gayne    Problam </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1950)">: &nbsp; Urine & Uric Acid  Problam </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1953)">: &nbsp; Gol Blader  Stone  </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1957)">: &nbsp; Hepatomegaly  With  Grade  II  Fatty  Change & Mild  ta  moderate  ascites. </div>
+        
+     
+           
+            
+            <div class="displayInputs_problems" onclick="showMyIssue(1960)">: &nbsp; Norve  & Ortho   Problam </div>
+        
+     
+            
+        </div>
+     
+          
+        <div id="displayInputs_narrative_details">
+   
+            
+            
+        </div>      
+             
+             
+    </body>
+</html>
+            

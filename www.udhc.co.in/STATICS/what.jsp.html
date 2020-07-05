@@ -1,0 +1,224 @@
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+    <script type="text/javascript" src="../INPUT/js/jquery-1.8.3.min.js"></script>
+ <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+ <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>What are we working on ?</title>
+    </head>
+    
+      <div id="content_space">
+
+    
+     <div><link href="../LANDING/bootstrap.css" rel="stylesheet">   
+        <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-31924728-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+ 
+
+    
+     <script type="text/javascript">
+                 function openLoginPopup(){
+                	 alert("Please make sure Pop-ups are enabled in your browser");
+                	  var auth_win=window.open("/AUTH/auth.jsp","Auth", "width=1400,height=500,scrollbars=no");
+                	  var timer = setInterval(function() {   
+                		    if(auth_win.closed) {  
+                		        clearInterval(timer);  
+                		        window.location.reload(); 
+                		    }  
+                		}, 1000);
+               	                 	  
+                  }
+                 
+                 function visitHome() {
+                	 
+                	 window.location="/login.jsp";
+					
+				}
+                 
+	</script>
+    	
+
+<!-- header id="header">
+	
+	  <div id="logo" onclick="visitHome()">	
+	  	<img src="/STATICS/images/MA-logo.jpg" height="50px" width="auto"/>
+	  	
+	  		 <strong>ArogyaUDHC  - User-driven Health care	</strong>
+	  </div>
+	  <div id="all_links">	  		
+				<ul >
+				
+					<li> <a class="popup_login" onclick="openLoginPopup()" href="#"> LOGIN</a>
+					</li>
+				
+					<li> <a style='background-color:red' href="/HOW/how.jsp">HOW</a>
+					</li>
+					
+					<li><a href="/STATICS/what.jsp">WHAT</a>
+					</li>
+					
+					<li><a href="/STATICS/why.jsp">WHY</a>
+					</li>
+					
+					
+					<li><a style='background-color:red'  href="/INPUT/input_directory.jsp">INPUT</a>
+					</li>
+					
+					<li><a href="/PROCESS/process.jsp">PROCESS</a>
+					</li>
+					
+					<li><a href="/SOLUTION/solutionList.jsp">OUTPUT</a>
+					</li>
+			
+						
+					
+				
+					<li><a href="/DASHBOARD/dashboard.jsp">DASHBOARD</a>
+					</li>
+				
+					
+					
+				</ul>	
+		</div> 	  
+	
+</header-->
+
+
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+
+      <div class="navbar-inner">
+        <div class="container">
+       
+          
+          <a class="brand" href="../login.jsp.html">
+          		
+          	<img src="images/MA-logo.jpg" height="10px" width="30px"/>
+	  	
+	  		 <strong>ArogyaUDHC	</strong>
+	     </a>
+          <div class="nav-collapse collapse">
+            <ul class="nav" >
+              
+				<li> <a class="popup_login btn btn-lg"" onclick="openLoginPopup()" href="what.jsp.html#"> LOGIN</a>
+					</li>
+				
+					<li> <a class="btn btn-lg" href="../HOW/how.jsp.html">HOW</a>
+					</li>
+					
+					<li><a class="btn btn-lg" href="what.jsp.html">WHAT</a>
+					</li>
+					
+					<li><a class="btn  btn-lg" href="why.jsp.html">WHY</a>
+					</li>
+					
+					
+					<li><a  class="btn  btn-lg" href="../INPUT/input_directory.jsp.html">INPUT</a>
+					</li>
+					
+					<li><a class="btn btn-lg" href="../PROCESS/process.jsp.html">PROCESS</a>
+					</li>
+					
+					<li><a class="btn btn-lg" href="../SOLUTION/solutionList.jsp.html">OUTPUT</a>
+					</li>
+					<!-- 
+			
+					 -->	
+					
+				
+					<li><a class="btn btn-lg" href="../DASHBOARD/dashboard.jsp.html">DASHBOARD</a>
+					</li>
+
+
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      
+    </div>
+ </div>
+
+<style>
+
+
+
+#header{
+	z-index:999;
+	position:fixed;
+	background-color: #F1F1F1;	
+	 border: 1px solid grey;
+	 padding:10px;
+	 width:100%;
+	 margin: auto;top:0;
+}
+
+#logo{
+
+	cursor:pointer;
+
+	float:left;
+	width:30%;
+	
+	background: rgb(246,248,249); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(246,248,249,1) 0%, rgba(229,235,238,1) 50%, rgba(215,222,227,1) 51%, rgba(245,247,249,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(246,248,249,1)), color-stop(50%,rgba(229,235,238,1)), color-stop(51%,rgba(215,222,227,1)), color-stop(100%,rgba(245,247,249,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#f5f7f9',GradientType=0 ); /* IE6-9 */
+	
+}
+#all-links{
+	
+
+}
+#all_links ul li{
+	display: inline;
+
+} 
+
+#all_links ul li a{
+	background-color: #174FF5;
+	color: white;
+	text-decoration: none;
+	padding: 10px;
+	border-radius: 5px;
+	font-weight: bold;
+
+}
+
+#all_links ul li a:hover{
+	background-color: green;
+	color: white;
+	
+
+}
+	
+</style></div>
+
+    <br><br><br><br><br><br><br><br><br>
+    <body>
+        <div align="center">
+            
+          <iframe width ="800px" height ="950px" src="https://docs.google.com/document/pub?id=1Oc62guDeT2-LUyqkeqp1BGwV-abvjK8YWVkfi8cG9T8&embedded=true"></iframe>
+        </div>
+      </div>
+    </body>
+</html>

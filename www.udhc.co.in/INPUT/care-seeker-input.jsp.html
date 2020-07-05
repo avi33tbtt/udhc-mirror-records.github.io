@@ -1,0 +1,538 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+    <script src="http://yui.yahooapis.com/3.5.0/build/yui/yui-min.js"></script>
+    
+    <head>
+                <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+ 				<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+ 				<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+ 				
+ 				
+		 		<link rel="stylesheet" type="text/css" href="../cleditor/jquery.cleditor.css" /> 
+		 		<script type="text/javascript" src="../cleditor/jquery.cleditor.js"></script>
+        
+                	
+<style>
+
+#care_seeker_form_div{
+
+	-moz-box-shadow: 0 0 10px #ccc;
+-webkit-box-shadow: 0 0 10px #ccc;
+box-shadow: 0 0 10px #ccc;
+}
+
+#existing_patients{
+
+	border-top: medium;
+	
+	border-color: black;
+
+}	
+
+#new_patient{
+		
+	border-top: medium;
+	
+	border-color: black;
+	
+}
+
+#custom_name
+{
+	background-color: #D24836;
+	color:white;
+	padding: 12px;
+	border-radius:5px;
+	font-size: 140%;
+	font-weight: bold;
+
+	
+}
+
+#generated_name
+{
+	background-color: #D24836;
+	color:white;
+	padding: 12px;
+	border-radius:5px;
+	font-size: 150%;
+	font-weight: bold;
+	
+	
+}
+.text_box
+{
+	height:20px;
+	font-size:14pt;
+	width:500px;	
+}
+
+label{
+	
+	font-size: 140%;
+	
+	
+	
+
+}
+#b
+{ /*
+	padding: 12px;
+	background-color: #0047F1;
+	color: white;
+	font-size: 140%;
+	border-radius: 5px;
+	font-weight: bold;
+*/	
+}
+
+
+#care_seeker_form_div{
+
+	width:80%;
+	margin: auto;
+	left:0;right:0;
+	border-radius: 4px;
+	padding: 4%;
+}
+
+</style>                	
+                	        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Health record form</title>
+   
+
+
+<script>
+  
+     function makeRichText() {
+                            
+                        }
+    
+    function setNewPatientStatus(isNewPatient)
+    {
+    	
+    	/*
+    	
+    	isNewPatient actually denotes the index of the option
+    	The options contain the list of the names of the prevoiusly added
+    	Patients. The first option denotes a NEW PATIENT
+    	
+       	*/
+       	
+       	
+        var patient_status_div = document.getElementById("isNew");
+        if(isNewPatient != 0 )
+            {
+                patient_status_div.value=0;
+                
+            }
+            else
+            {
+                patient_status_div.value=1;
+            }
+        
+            alert("Updated");        
+    }
+    
+
+	function updatePatientName()
+	{
+		var sci_name=$("#patient_name_sci").val();
+		if( sci_name == undefined ) 
+        	{
+	          return;
+	        }
+  		var word_array=sci_name.split(' ');
+  		var start=0;
+  		
+  		/*  workaround for leading # or * */
+  		
+  		word_array[0]=word_array[0].replace(/\s/g, '');
+  		if(word_array[0].length==1){
+  			start=1;
+  		}
+  		else{
+  			start=0;
+  		}  		word_array[start]=word_array[start]+$("#pincode").val();
+  		
+  		var final_name="";
+  		for ( var i=start ;i < word_array.length ; i++ )
+  		{
+  			final_name=final_name+word_array[i];
+  		}
+  		//alert(final_name);
+  		
+  		$("#patient_name_text").val(final_name);
+	}
+	$(document).ready(function() {
+  // Handler for .ready() called.
+  	
+  		
+  		$("#editor").cleditor({
+	
+				width:870,
+				height:400
+	
+		});
+  
+  		$("#care_seeker_form").submit(function(){
+  			if($('#consent_letter').val().length !=0)
+  			{ 				
+  				
+  				return true;
+  			}
+  			else
+  			{
+  				alert("Please upload your signed consent form");
+  				return false;
+  			}
+  				
+  		})
+  	
+		//makeRichText();
+  
+  		updatePatientName();
+  		$("#pincode").change(updatePatientName);
+  		$("#patient_name_sci").change(updatePatientName);
+  		
+  		$("#existing_patients").hide();	
+	  	$("#new_patient").hide();
+  	
+  
+  		//$("#patient_name_text").hide();
+  		//alert("loaded");
+  		$("#custom_name").click(function(event){
+
+  				// change attribute name of list to patient_name_inactive
+  				// change attribute name of textbox to patient_name
+
+  				// hide list
+  				// show textbox
+
+
+  				//alert("okay so we need to work something out");
+  				
+  				/*
+  				$("#patient_name_list").hide();
+  				$("#patient_name_text").show();
+  				*/
+
+  				
+  				$("#existing_patients").hide();	
+			  	$("#new_patient").show();
+
+  			  	$("#patient_name_text").attr("name","patient_name");
+  			  	$("#patient_name_list").attr("name","patient_name_inactive");
+
+  			  	// new patient
+
+		  		$("#patient_status_div").val("1");
+  				event.preventDefault();
+  		});
+
+  		$("#generated_name").click(function(event){
+
+  					// change attribute name of list to patient_name_inactive  existing_patients
+  					// change attribute name of textbox to patient_name new_patient
+
+  					// hide list
+  					// show textbox
+
+  			  		/*
+  					$("#patient_name_list").show();	
+  			  		$("#patient_name_text").hide();
+  			  		*/
+  			  		
+  			  		$("#existing_patients").show();	
+  			  		$("#new_patient").hide();
+
+  			  		$("#patient_name_list").attr("name","patient_name");
+  			  		$("#patient_name_text").attr("name","patient_name_inactive");
+
+  			  		// old patient
+
+  			  		$("#patient_status_div").val("0");
+  			  		event.preventDefault();
+
+
+  		});
+  		
+  		$('.popup_login').click(function(){
+        	 alert("Please make sure Pop-ups are enabled in your browser");
+        	  var auth_win=window.open("/AUTH/auth.jsp","Auth", "width=1400,height=500,scrollbars=no");
+        	  var timer = setInterval(function() {   
+        		    if(auth_win.closed) {  
+        		        clearInterval(timer);  
+        		        window.location.reload(); 
+        		    }  
+        		}, 1000);
+       	                 	  
+          });  
+                  
+
+
+	});
+	
+	
+	
+</script>
+
+
+
+
+    
+
+
+
+
+     </head>
+     <div>
+         
+         
+         <link href="../LANDING/bootstrap.css" rel="stylesheet">   
+        <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-31924728-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+ 
+
+    
+     <script type="text/javascript">
+                 function openLoginPopup(){
+                	 alert("Please make sure Pop-ups are enabled in your browser");
+                	  var auth_win=window.open("/AUTH/auth.jsp","Auth", "width=1400,height=500,scrollbars=no");
+                	  var timer = setInterval(function() {   
+                		    if(auth_win.closed) {  
+                		        clearInterval(timer);  
+                		        window.location.reload(); 
+                		    }  
+                		}, 1000);
+               	                 	  
+                  }
+                 
+                 function visitHome() {
+                	 
+                	 window.location="/login.jsp";
+					
+				}
+                 
+	</script>
+    	
+
+<!-- header id="header">
+	
+	  <div id="logo" onclick="visitHome()">	
+	  	<img src="/STATICS/images/MA-logo.jpg" height="50px" width="auto"/>
+	  	
+	  		 <strong>ArogyaUDHC  - User-driven Health care	</strong>
+	  </div>
+	  <div id="all_links">	  		
+				<ul >
+				
+					<li> <a class="popup_login" onclick="openLoginPopup()" href="#"> LOGIN</a>
+					</li>
+				
+					<li> <a style='background-color:red' href="/HOW/how.jsp">HOW</a>
+					</li>
+					
+					<li><a href="/STATICS/what.jsp">WHAT</a>
+					</li>
+					
+					<li><a href="/STATICS/why.jsp">WHY</a>
+					</li>
+					
+					
+					<li><a style='background-color:red'  href="/INPUT/input_directory.jsp">INPUT</a>
+					</li>
+					
+					<li><a href="/PROCESS/process.jsp">PROCESS</a>
+					</li>
+					
+					<li><a href="/SOLUTION/solutionList.jsp">OUTPUT</a>
+					</li>
+			
+						
+					
+				
+					<li><a href="/DASHBOARD/dashboard.jsp">DASHBOARD</a>
+					</li>
+				
+					
+					
+				</ul>	
+		</div> 	  
+	
+</header-->
+
+
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+
+      <div class="navbar-inner">
+        <div class="container">
+       
+          
+          <a class="brand" href="../login.jsp.html">
+          		
+          	<img src="../STATICS/images/MA-logo.jpg" height="10px" width="30px"/>
+	  	
+	  		 <strong>ArogyaUDHC	</strong>
+	     </a>
+          <div class="nav-collapse collapse">
+            <ul class="nav" >
+              
+				<li> <a class="popup_login btn btn-lg"" onclick="openLoginPopup()" href="care-seeker-input.jsp.html#"> LOGIN</a>
+					</li>
+				
+					<li> <a class="btn btn-lg" href="../HOW/how.jsp.html">HOW</a>
+					</li>
+					
+					<li><a class="btn btn-lg" href="../STATICS/what.jsp.html">WHAT</a>
+					</li>
+					
+					<li><a class="btn  btn-lg" href="../STATICS/why.jsp.html">WHY</a>
+					</li>
+					
+					
+					<li><a  class="btn  btn-lg" href="input_directory.jsp.html">INPUT</a>
+					</li>
+					
+					<li><a class="btn btn-lg" href="../PROCESS/process.jsp.html">PROCESS</a>
+					</li>
+					
+					<li><a class="btn btn-lg" href="../SOLUTION/solutionList.jsp.html">OUTPUT</a>
+					</li>
+					<!-- 
+			
+					 -->	
+					
+				
+					<li><a class="btn btn-lg" href="../DASHBOARD/dashboard.jsp.html">DASHBOARD</a>
+					</li>
+
+
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      
+    </div>
+ </div>
+
+<style>
+
+
+
+#header{
+	z-index:999;
+	position:fixed;
+	background-color: #F1F1F1;	
+	 border: 1px solid grey;
+	 padding:10px;
+	 width:100%;
+	 margin: auto;top:0;
+}
+
+#logo{
+
+	cursor:pointer;
+
+	float:left;
+	width:30%;
+	
+	background: rgb(246,248,249); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(246,248,249,1) 0%, rgba(229,235,238,1) 50%, rgba(215,222,227,1) 51%, rgba(245,247,249,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(246,248,249,1)), color-stop(50%,rgba(229,235,238,1)), color-stop(51%,rgba(215,222,227,1)), color-stop(100%,rgba(245,247,249,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#f5f7f9',GradientType=0 ); /* IE6-9 */
+	
+}
+#all-links{
+	
+
+}
+#all_links ul li{
+	display: inline;
+
+} 
+
+#all_links ul li a{
+	background-color: #174FF5;
+	color: white;
+	text-decoration: none;
+	padding: 10px;
+	border-radius: 5px;
+	font-weight: bold;
+
+}
+
+#all_links ul li a:hover{
+	background-color: green;
+	color: white;
+	
+
+}
+	
+</style>
+     </div>
+    
+    <br><br><br><br><br>
+    
+    <body >
+    
+    
+            
+                  
+            <h3 align="center">
+            	
+            	<img alt="" src="medical-bag.png"> &nbsp;
+            
+            	 Add a new health issue 
+            </h1>
+            
+<style>
+
+#openid_login{
+
+
+}
+
+</style>            
+             
+
+ 	<div class="popup_login" align='center'>
+  		<strong> PLEASE LOGIN TO CONTINUE  		</strong> <br><br>
+  		<a href="care-seeker-input.jsp.html#">
+  		
+  		<img src="../STATICS/images/openid.png">
+  		
+  		</a>
+  	</div>
+  		
+  		
+        
+
+    
+    
+</html>

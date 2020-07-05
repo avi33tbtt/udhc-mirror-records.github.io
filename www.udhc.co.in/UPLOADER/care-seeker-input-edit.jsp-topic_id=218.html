@@ -1,0 +1,669 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+    <script src="http://yui.yahooapis.com/3.5.0/build/yui/yui-min.js"></script>
+    
+    <head>    	
+    
+    		<meta charset='utf-8'/>
+            <script type="text/javascript" src="../INPUT/js/jquery-1.8.3.min.js"></script>
+ 			<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+ 			<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+			 <script src="http://malsup.github.com/jquery.form.js"></script>  
+
+		 <link rel="stylesheet" type="text/css" href="../cleditor/jquery.cleditor.css" /> 
+		 <script type="text/javascript" src="../cleditor/jquery.cleditor.js"></script>
+		<script src="../INPUT/colorbox/jquery.colorbox.js"></script>
+	<link rel="stylesheet" href="../INPUT/colorbox/colorbox.css" /> 
+	
+	<script src='jquery.tagify.js'></script>
+	<link href='jquery.tagify.css' rel="stylesheet" />
+        
+                	
+
+
+<style>
+
+
+/********************************* NEW ************************************/
+
+div#image_list{
+
+	background-color: white;
+	height:650px;
+	overflow:scroll;
+	padding:10px;
+	
+	-webkit-box-shadow: 10px 0px 5px -2px #888 ;
+	
+}
+
+.scan_image{
+	
+	margin-bottom: 10px;
+	margin-top:-20px;
+	z-index:9;
+	
+}
+
+form#scan_upload_form{
+	
+}
+
+
+#uploader_ui{
+ 
+	margin-top: 20px;
+	
+}
+
+#progress_div{
+	width:80%;
+	z-index:8000;
+}
+
+#request_outcome{
+	display: none;
+	position: absolute;
+	left: 40%;
+	top: 40%;
+	width: 400px;
+	border-radius: 2px;
+	z-index: 99;
+}
+
+#black_overlay{
+	display:none;
+	position: absolute;
+	top:0%;
+	left:0%;
+	width:1400px;
+	height:1400px;
+	background-color: black;
+	opacity:0.5;
+	z-index:98;	
+}
+
+
+#request_outcome_message{
+
+	font-size:120%;
+	font-weight: 170%;
+}
+
+#narrative_form{
+}
+
+
+.delete_scan_button{
+	position:relative; !important
+	z-index:10;
+}
+</style>                	
+                	        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Health record form</title>
+   
+
+
+
+
+<script type="text/javascript">
+
+	
+	
+	
+	function setDeleteScannedImageHandler(){
+		$('#image_list').on('click', 'input.delete_scan_button', function(){
+			showBlackOverlay();
+			var r=confirm("Are you sure you want to delete ?");
+			hideBlackOverlay();
+			 if(r==false){
+			 		return false;
+			 }
+			else{
+			
+				var image_id=$(this).attr("image_id");
+		    	deleteImage(image_id);
+			}
+		});
+	}
+	function setCloseConfirmationButtonHandler(){
+		$("#close_confirmation_button").click(function(){
+			closeConfirmation();
+			
+			
+		});
+		$(window).keypress(function(e) {
+		       if ( e.key == 13){
+		    	   closeConfirmation();
+		       }
+		   });
+	}
+	
+	function setNarrativeFormHandler(){
+		
+		submitNarrativeForm();
+	}
+	
+	function setReportsUploadFormHandler(){
+		showForm("#forms_div","#progress_div");
+		var options ={
+				
+				dataType:'json',
+				beforeSend: function() {
+					hideForm("#forms_div","#progress_div"); 
+					
+
+		            var percentVal = '0%';
+		           
+		        },
+		        uploadProgress: function(event, position, total, percentComplete) {
+		        	
+		        	/* style="width: 0%;" image_upload_progress */
+		            var percentVal = percentComplete + '%';
+		            $("#progress").html(percentVal);
+		            $("#image_upload_progress").attr("style","width: "+percentComplete+"%;'");
+		            
+		            // Feedback after upload is done, but server is yet to respond.
+		            if (percentVal == "100%"){
+			            $("#progress").html("Processing......");
+		            }
+		            
+		           
+		        },
+		        complete: function(xhr) {
+		            $("#image_upload_progress").attr("style","width: 0%;'");
+		            showForm("#forms_div","#progress_div");
+
+		            //status.html(xhr.responseText);
+		        },
+		       
+		        success : function(response,status,xhr,e){
+		        	//alert(JSON.stringify(response)+" "+response["image_id"] );
+		        	showImage(response["image_id"]);
+		        	showSuccessConfirmation();
+		        	
+		        },
+		        error :function(error){
+		        	showFailedConfirmation(error);
+		        }
+		        
+		};
+		$('#scan_upload_form').ajaxForm(options);
+		
+	}
+	function submitNarrativeForm(){
+		
+		showForm("#forms_div","#progress_div");
+		var options ={
+				
+				dataType:'json',
+				beforeSend: function() {
+					hideForm("#forms_div","#progress_div"); 
+					
+		            var percentVal = '0%';
+		           
+		        },
+		        uploadProgress: function(event, position, total, percentComplete) {
+		        	
+		        	/* style="width: 0%;" image_upload_progress */
+		            var percentVal = percentComplete + '%';
+		            $("#progress").html(percentVal);
+		            $("#image_upload_progress").attr("style","width: "+percentComplete+"%;'");
+		             
+		            if (percentVal == "100%"){
+			            $("#progress").html("Processing......");
+		            }
+		            
+		           
+		        },
+		        complete: function(xhr) {
+		           // $("#image_upload_progress").attr("style","width: 0%;'");
+		            showForm("#forms_div","#progress_div");
+		          
+
+		            //status.html(xhr.responseText);
+		        },
+		       
+		        success : function(response,status,xhr,e){
+		        	showSuccessConfirmation();
+		        	//alert(JSON.stringify(response)+" "+response["image_id"] );
+		        	//showImage(response["image_id"]);
+		        	
+		        	
+		        },
+		        
+		        error :function(error){
+		        	showFailedConfirmation(error);
+		        }
+		};
+		$("#narrative_form").ajaxForm(options);
+		
+		//alert($(this).serialize());
+		
+		/*
+		 $.ajax({
+		           type: "POST",
+		           url: $(this).attr("action"),
+		           data: $(this).serialize(), // serializes the form's elements.
+	           		success: function(data)
+	         	  {
+	              	 alert("submitted"); // show response from the php script.
+	              }
+	         });
+		*/
+	
+	    return false; // avoid to execute the actual submit of the form.	
+		
+	}
+	
+	function showImage(image_id){
+				
+		var div= document.createElement("div");
+		$(div).attr("class","scan");
+		$(div).attr("image_id",image_id);
+		
+		var a=document.createElement("a");
+		$(a).attr("class","scan_link");
+		$(a).attr("href","#");
+		$(a).attr("onclick","show_image('/ViewImage?scale=500&file_id="+image_id+"')");
+		
+		var img = document.createElement("img");
+		$(img).attr("alt","Loading...");
+		
+		$(img).attr("class","scan_image");
+		$(img).attr("src","/ViewImage?scale=300&file_id="+image_id);
+		$(img).attr("height","auto");
+		
+		/* appending the DOM elements */
+		
+		$(a).append(img);
+		
+		var delete_button= get_delete_scan_button(image_id);
+		$(div).append(delete_button);
+		
+		$(div).append(a);
+		
+		$("#image_list").append(div);
+	}
+	
+	function hideForm(form,progress_div){
+		$(form).css("display","none");
+		$(progress_div).css("display","block");
+		$("#progress").html("");
+		//image_upload_progress
+		
+	}
+	function showForm(form,progress_div){
+		$(form).css("display","block");
+		$(progress_div).css("display","none");
+		$("#progress").html("");
+	}
+	
+	function showSuccessConfirmation(){
+		//alert("success");
+		$("#request_outcome_message").html("Changes saved successfully");
+		$("#black_overlay").css('display','block');
+		$("#request_outcome").css("display","block");
+	}
+	
+	function showFailedConfirmation(error){
+		$("#request_outcome_message").html("Failed + "+error);
+		$("#black_overlay").css('display','block');
+		$("#request_outcome").css("display","block");
+	}
+	
+	function closeConfirmation(){
+		$("#black_overlay").css('display','none');
+		$("#request_outcome").css("display","none");
+	}
+	
+	function showBlackOverlay(){
+		$("#black_overlay").css('display','block');
+
+	}
+	
+
+	function hideBlackOverlay(){
+		$("#black_overlay").css('display','none');
+
+	}
+	
+	function fetchAllImageIDs(){
+			 
+				var finalUrl='/GetAllImagesIDs?topic_id=218';
+		        var req=$.ajax({
+		                   type:"GET",
+		                   url:finalUrl,
+		                   //contentType: "application/json; charset=utf-8",
+		                   dataType:"JSON",
+		                   success: function(html){
+		                 	 // alert(html[0].about);
+		                 	  
+		                 	  addAllImages(html);                            
+		                },
+		               complete:function(jqXHR, textStatus) {
+		                
+		               },
+		              error: function(xhr, textStatus, errorThrown){
+		                //  alert('request failed->'+textStatus);		            	
+		              }
+		     });  
+	}
+	
+	function addAllImages(image_info_list)
+	{
+		   
+		   for(var i =0 ; i< image_info_list.length ; i++ )
+		   {
+			  showImage(image_info_list[i]["image_id"]);
+			//  scans_that_have_been_fetched.push(image_info_list[i]["image_id"].toString());
+		   }
+		  
+	}
+	
+	var scans_that_have_been_fetched = new Array();
+	
+	function is_scan_fetched(image_id){
+		if ( arrValues.indexOf(image_id.toString()) > -1 ){
+			return true;
+		}
+		return false;
+	}
+
+	function get_delete_scan_button(image_id){
+		var button = document.createElement("input");
+		$(button).attr("type","button");
+		$(button).attr("value","X");
+		$(button).attr("class","btn delete_scan_button");
+		$(button).attr("image_id",image_id);
+		
+		return button;
+		
+	}
+
+	
+	/**** Delete utils */
+	
+	function deleteImage( image_id )
+	{
+			var finalUrl='/DeleteHealthFile?health_file_id='+image_id;
+			$("div[image_id='"+image_id+"']").css("display","none");
+		     var req=$.ajax({
+		                   type:"GET",
+		                   url:finalUrl,
+		                   //contentType: "application/json; charset=utf-8",
+		                   dataType:"JSON",
+		                   success: function(deletion_status){
+		                 	  //alert(html[0].about);
+		                 	  
+		                 //	  deletion_status = jQuery.parseJSON(deletion_status);
+		                 	 // alert( deletion_status[0].status);       
+		                 	  if ( parseInt(deletion_status[0].status) > 0)
+		                 	  {
+		                 		 $("div[image_id='"+image_id+"']").remove();
+		                 		 //alert(" Successfully removed");
+		                 	  }
+		                 	  else{
+		                 		  alert( " Server error . Could not be deleted");
+		                 		 $("div[image_id='"+image_id+"']").css("display","block");
+		                 	  }
+		                 	  
+		                },
+		               complete:function(jqXHR, textStatus) {
+		                 // alert("request complete "+textStatus);
+		               },
+		              error: function(xhr, textStatus, errorThrown){
+		                  alert(" Error , Could not be deleted ");
+		            	  $("div[image_id='"+image_id+"']").css("display","block");
+		              }   
+		              
+		              
+		     });  
+		     
+	}
+	
+	function show_image(link)
+	{
+	 //   window.openDialog(link, 'image');//, features, arg1, arg2)
+	 
+	  var myWin = window.open(link,"MainWin","width=500px" + ",height=500px"+ ",screenX=500px" + ",screenY=500px" + ",left=500px" + ",top= 500px"+ ",scrollbars=yes,toolbar=0,status=1,menubar=0,resizable=0,titlebar=no");
+	 
+	}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+     </head>
+     <div>
+         
+         
+         <link href="../LANDING/bootstrap.css" rel="stylesheet">   
+        <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-31924728-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+ 
+
+    
+     <script type="text/javascript">
+                 function openLoginPopup(){
+                	 alert("Please make sure Pop-ups are enabled in your browser");
+                	  var auth_win=window.open("/AUTH/auth.jsp","Auth", "width=1400,height=500,scrollbars=no");
+                	  var timer = setInterval(function() {   
+                		    if(auth_win.closed) {  
+                		        clearInterval(timer);  
+                		        window.location.reload(); 
+                		    }  
+                		}, 1000);
+               	                 	  
+                  }
+                 
+                 function visitHome() {
+                	 
+                	 window.location="/login.jsp";
+					
+				}
+                 
+	</script>
+    	
+
+<!-- header id="header">
+	
+	  <div id="logo" onclick="visitHome()">	
+	  	<img src="/STATICS/images/MA-logo.jpg" height="50px" width="auto"/>
+	  	
+	  		 <strong>ArogyaUDHC  - User-driven Health care	</strong>
+	  </div>
+	  <div id="all_links">	  		
+				<ul >
+				
+					<li> <a class="popup_login" onclick="openLoginPopup()" href="#"> LOGIN</a>
+					</li>
+				
+					<li> <a style='background-color:red' href="/HOW/how.jsp">HOW</a>
+					</li>
+					
+					<li><a href="/STATICS/what.jsp">WHAT</a>
+					</li>
+					
+					<li><a href="/STATICS/why.jsp">WHY</a>
+					</li>
+					
+					
+					<li><a style='background-color:red'  href="/INPUT/input_directory.jsp">INPUT</a>
+					</li>
+					
+					<li><a href="/PROCESS/process.jsp">PROCESS</a>
+					</li>
+					
+					<li><a href="/SOLUTION/solutionList.jsp">OUTPUT</a>
+					</li>
+			
+						
+					
+				
+					<li><a href="/DASHBOARD/dashboard.jsp">DASHBOARD</a>
+					</li>
+				
+					
+					
+				</ul>	
+		</div> 	  
+	
+</header-->
+
+
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+
+      <div class="navbar-inner">
+        <div class="container">
+       
+          
+          <a class="brand" href="../login.jsp.html">
+          		
+          	<img src="../STATICS/images/MA-logo.jpg" height="10px" width="30px"/>
+	  	
+	  		 <strong>ArogyaUDHC	</strong>
+	     </a>
+          <div class="nav-collapse collapse">
+            <ul class="nav" >
+              
+				<li> <a class="popup_login btn btn-lg"" onclick="openLoginPopup()" href="care-seeker-input-edit.jsp-topic_id=218.html#"> LOGIN</a>
+					</li>
+				
+					<li> <a class="btn btn-lg" href="../HOW/how.jsp.html">HOW</a>
+					</li>
+					
+					<li><a class="btn btn-lg" href="../STATICS/what.jsp.html">WHAT</a>
+					</li>
+					
+					<li><a class="btn  btn-lg" href="../STATICS/why.jsp.html">WHY</a>
+					</li>
+					
+					
+					<li><a  class="btn  btn-lg" href="../INPUT/input_directory.jsp.html">INPUT</a>
+					</li>
+					
+					<li><a class="btn btn-lg" href="../PROCESS/process.jsp.html">PROCESS</a>
+					</li>
+					
+					<li><a class="btn btn-lg" href="../SOLUTION/solutionList.jsp.html">OUTPUT</a>
+					</li>
+					<!-- 
+			
+					 -->	
+					
+				
+					<li><a class="btn btn-lg" href="../DASHBOARD/dashboard.jsp.html">DASHBOARD</a>
+					</li>
+
+
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      
+    </div>
+ </div>
+
+<style>
+
+
+
+#header{
+	z-index:999;
+	position:fixed;
+	background-color: #F1F1F1;	
+	 border: 1px solid grey;
+	 padding:10px;
+	 width:100%;
+	 margin: auto;top:0;
+}
+
+#logo{
+
+	cursor:pointer;
+
+	float:left;
+	width:30%;
+	
+	background: rgb(246,248,249); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(246,248,249,1) 0%, rgba(229,235,238,1) 50%, rgba(215,222,227,1) 51%, rgba(245,247,249,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(246,248,249,1)), color-stop(50%,rgba(229,235,238,1)), color-stop(51%,rgba(215,222,227,1)), color-stop(100%,rgba(245,247,249,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#f5f7f9',GradientType=0 ); /* IE6-9 */
+	
+}
+#all-links{
+	
+
+}
+#all_links ul li{
+	display: inline;
+
+} 
+
+#all_links ul li a{
+	background-color: #174FF5;
+	color: white;
+	text-decoration: none;
+	padding: 10px;
+	border-radius: 5px;
+	font-weight: bold;
+
+}
+
+#all_links ul li a:hover{
+	background-color: green;
+	color: white;
+	
+
+}
+	
+</style>
+     </div>
+     
+     <br><br><br><br>
+     
+     
+     
+     
+
+ 
+ <div class="popup_login" align='center'>
+  		<button class="btn btn-large" onclick="openLoginPopup()">Login</button>
+  	</div>
+   
+

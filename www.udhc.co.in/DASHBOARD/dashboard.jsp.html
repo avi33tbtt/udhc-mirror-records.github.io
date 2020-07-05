@@ -1,0 +1,726 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+
+        	 <link rel="stylesheet" href="../jqwidgets/styles/jqx.base.css" type="text/css" />
+
+<script type="text/javascript" src="../INPUT/js/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src="../jqwidgets/jqxcore.js"></script>
+    
+    <script type="text/javascript" src="../jqwidgets/jqxtabs.js"></script>
+    
+    <script src="../INPUT/colorbox/jquery.colorbox.js"></script>
+<link rel="stylesheet" href="../INPUT/colorbox/colorbox.css" />
+
+<title>My control room</title>
+
+<style type="text/css">
+
+tr:hover{
+
+	background-color: #DBE7F1;	
+}
+
+
+td{
+
+	padding:7px;
+	border-radius:3px;
+	
+	/*
+	border-bottom: solid 2px black;
+	*/
+}
+
+th{
+	position:static;
+	padding:8px;
+	background-color: #0C4B80;
+	color:white;
+}
+
+table{
+	width: 90%;
+	margin: auto;
+	right:0 ; left :0;
+	font-weight: 120%; 
+}
+
+.approved_css{
+
+	border-radius:9px;
+	margin:auto;left:0;right:0;
+	cursor: pointer;
+	padding: 7px;
+	background-color:green;
+	color: white;
+	margin: 6px;
+}
+
+.not_approved_css{
+
+	border-radius:9px;
+	margin:auto;left:0;right:0;
+	cursor: pointer;
+	padding: 7px;
+	background-color: red;
+	color: white;
+	margin: 6px;
+
+}
+
+.is_moderator{
+
+	border-radius:9px;
+	margin:auto;left:0;right:0;
+	cursor: pointer;
+	padding: 7px;
+	background-color:green;
+	color: white;
+	margin: 6px;
+
+}
+
+.is_not_moderator{
+
+
+	border-radius:9px;
+	margin:auto;left:0;right:0;
+	cursor: pointer;
+	padding: 7px;
+	background-color: red;
+	color: white;
+	margin: 6px;
+
+}
+
+
+.user_not_approved_button{
+
+		border-radius:9px;
+	margin:auto;left:0;right:0;
+	cursor: pointer;
+	padding: 7px;
+	background-color:red;
+	color: white;
+	margin: 6px;
+
+}
+
+.user_approved_button{
+
+		border-radius:9px;
+	margin:auto;left:0;right:0;
+	cursor: pointer;
+	padding: 7px;
+	background-color: green;
+	color: white;
+	margin: 6px;
+
+}
+
+#jqxtabs{
+
+	margin: auto;left:0;right:0;
+	width: 100%;
+	font-weight: 100%;
+	
+	
+}
+
+#jqxtabs ul li{
+		font-weight: 130%;	
+	
+}
+
+
+.solution_box{
+	
+		border-radius: 5px;
+		border: solid 2px black;
+		padding: 8px;
+		text-decoration: none;
+		
+
+}
+
+
+#load_wait{
+
+	margin: auto;
+	left: 40%;
+	right: 40%;
+	top: 50%;
+	bottom: 50%;
+	position: fixed;
+	z-index:999;
+}
+
+a.consent_letter_uploaded_true{
+
+ 	color: green;
+ 
+}
+
+
+a.consent_letter_uploaded_false{
+	color: red;
+}
+
+</style>
+
+<script type="text/javascript">
+
+	$(document).ready(call_on_ready);
+	
+	function updateApprovalChangeOnPage(html,email,current_privilege,button){
+		
+		$(button).attr("approved", html[0].approved);
+		$(button).attr("role",html[0].final_privilege );
+		
+	//	alert( $(button).attr("role") );
+		if(html[0].approved == 1){
+			$(button).attr("class","user_approved_button");
+			$(button).attr("value","APPROVED");
+			
+		}
+		
+		else{
+			$(button).attr("class","user_not_approved_button");
+			$(button).attr("value","NOT APPROVED");
+
+		}
+	}
+	
+	function makeApprovalChange(email,current_privilege,button){
+		var email1= encodeURIComponent(email);
+		var finalUrl='/UpdateUserPrivilegeAprroval?email='+email1+'&current_privilege='+current_privilege;
+   		 var req=$.ajax({
+                  type:"GET",
+                  url:finalUrl,
+                  //contentType: "application/json; charset=utf-8",
+                  dataType:"JSON",
+                  success: function(html){
+                	 // alert(html[0].about);
+                	 // $("#load_wait").hide();
+                //	 alert(html);
+                	 updateApprovalChangeOnPage(html,email,current_privilege,button)
+                	                             
+               },
+              complete:function(jqXHR, textStatus) {
+                // alert("request complete "+textStatus);
+           	 //  $("#load_wait").hide();
+              },
+             error: function(xhr, textStatus, errorThrown){
+               //  alert('request failed->'+textStatus);
+           	//  $("#load_wait").hide();
+             }   
+		
+			});
+	}
+	
+	 function deleteHealthIssue(topic_id){
+		 $("#load_wait").show();
+		  var finalUrl='/DeleteHealthIssueFromDashboard?topic_id='+topic_id;
+	    	 var req=$.ajax({
+	                   type:"GET",
+	                   url:finalUrl,
+	                   //contentType: "application/json; charset=utf-8",
+	                   dataType:"JSON",
+	                   success: function(html){
+	                 	 // alert(html[0].about);
+	                 	 // $("#load_wait").hide();
+	                 //	 alert(html);
+	                 	 deleteHealthIssue_callback(html,topic_id);
+	                 	                             
+	                },
+	               complete:function(jqXHR, textStatus) {
+	                 // alert("request complete "+textStatus);
+	            	 //  $("#load_wait").hide();
+	               },
+	              error: function(xhr, textStatus, errorThrown){
+	                //  alert('request failed->'+textStatus);
+	            	//  $("#load_wait").hide();
+	            	  $("#load_wait").hide();
+	            	  alert(" Please report there error: "+textStatus);
+	              }   
+	              
+	              
+	    	 });  
+
+		  
+	  }	
+	  
+	  function deleteHealthIssue_callback(response, topic_id){
+		  $("#load_wait").hide();
+		  if( response[0].isdeleted == "true"){
+			  $("tr[topic_id='"+topic_id+"']").remove();		
+			  alert("Deleted");
+		  }
+		  else{
+			  alert("Sorry , could not delete");
+		  }
+		  
+	  }	
+	  
+	  function refreshVisiblity(){
+		  
+		  $( "tr[type='health_issue']" ).each(function(){
+				 $(this).show();	 
+							 
+			});
+		  
+	  }
+	
+	
+	function call_on_ready(){
+		
+		$("input#search_all").keyup(function(){
+			
+			refreshVisiblity();
+			
+			 $( "tr[type='health_issue']" ).each(function(){
+				 var search_string =$("input#search_all").val();
+				 var ref_string = $(this).attr('tags');
+				 
+				 
+				 if ( ref_string.toLowerCase().indexOf(search_string.toLowerCase()) <0 ){
+				//	 alert (search_string + ":" + ref_string);
+					 $(this).hide();	 
+				 }
+				 
+			});
+		});
+		
+		
+		$("#load_wait").hide();
+		$("a.solution_box,a.mail_box").colorbox({iframe:true, innerWidth:900, innerHeight:700});
+			
+		$('#jqxtabs').jqxTabs({ position: 'top', width: '99%' , height: "auto", reorder: true });
+			if(  $("input#user_approval_button").size() > 0 )
+			{
+				$("input#user_approval_button").click(function(){
+					var approval_status= $(this).attr("class");
+					var email=$(this).attr("email");
+					var role = $(this).attr("role");
+					//var approved =  $(this).attr("approved"); 
+					$(this).attr("value"," WORKING....");
+					
+					// send request to server
+
+					makeApprovalChange(email,role,this);
+				
+				});
+				
+				
+			}
+			
+			
+			/*   For moderator approval */
+			if(  $("input#moderator_approval_button").size() > 0 )
+			{
+				$("input#moderator_approval_button").click(function(){
+					var approval_status= $(this).attr("class");
+					var email=$(this).attr("email");
+					var moderator = $(this).attr("moderator");
+					//var approved =  $(this).attr("approved"); 
+					$(this).attr("value"," WORKING....");
+					
+					// send request to server
+
+					makeModeratorChange(email,moderator,this);
+				
+				});
+				
+				
+			}
+			
+			if ( $("a.delete_health_issue").size() > 0  ){
+				
+				$("a.delete_health_issue").click(function(){
+					
+
+					// check if yes or no
+					var topic_id = $(this).attr("topic_id");
+					var r=confirm("Are you sure you want to delete ?");
+					if (r==true)
+					 {
+					 		deleteHealthIssue(topic_id);
+					 }
+				});	
+		  }
+			
+		 
+		
+			if ( $("input#approval_button").size() > 0 ){
+				
+				$("input#approval_button").click(function(){
+					
+					var approval_status= $(this).attr("class");
+					var uploader = $(this).attr("uploader");
+					var topic_id=$(this).attr("topic_id");
+					$(this).attr("value"," WORKING....");
+				//	alert(approval_status);
+					
+					var approve_to="";
+					var updatedApprovalStatus="";
+					var updatedApprovalClass="";
+					if( approval_status == "btn btn-success" )
+					{
+						approve_to="not_approve";
+						updatedApprovalStatus=" NOT APPROVED";
+						updatedApprovalClass="btn btn-danger";
+	
+					}
+					else{
+						approve_to="approve";
+						updatedApprovalStatus="APPROVED";
+						updatedApprovalClass="btn btn-success";
+	
+					}
+					
+					var response= updateApprovalStatus(uploader,topic_id,approve_to,this,updatedApprovalStatus,updatedApprovalClass);
+				//	alert(response[0]);
+					if( response[0].status == 1)
+					{
+						$(this).attr("value",updatedApprovalStatus);
+						$(this).attr("class",updatedApprovalClass);
+						
+					}
+					
+				});
+				
+				
+			}
+			
+			
+			
+		}
+		
+		function makeModeratorChange(email,moderator,button){
+			// send to server
+			var updated_moderator = moderator == "true"?"false":"true";
+			var finalUrl='/UpdateModerator?email='+email+'&moderator='+updated_moderator;
+	    	 var req=$.ajax({
+	                   type:"GET",
+	                   url:finalUrl,
+	                   //contentType: "application/json; charset=utf-8",
+	                   dataType:"JSON",
+	                   success: function(response){
+	                 	
+	                	   makeModeratorChange_callback(button,updated_moderator,response);
+	           		                 	                             
+	                },
+	               complete:function(jqXHR, textStatus) {
+	                 // alert("request complete "+textStatus);
+	               },
+	              error: function(xhr, textStatus, errorThrown){
+	                //  alert('request failed->'+textStatus);
+	              }   
+	    	 });
+		}
+			
+			
+		
+		function makeModeratorChange_callback(button,moderator,response){
+			
+			var updatedModeratorStatus = "";
+			var updatedModeratorClass = "";
+			
+			if( response[0].status != "0")
+			{
+				//alert("upadting "+moderator );
+				updatedModeratorStatus = moderator=="true"?"YES":"NO";
+				$(button).attr("value",updatedModeratorStatus);
+				$(button).attr("moderator",moderator);
+				
+				updatedModeratorClass = moderator=="true"?"is_moderator":"is_not_moderator";
+				$(button).attr("class",updatedModeratorClass);
+				
+			}
+			
+			else{
+				updatedModeratorStatus = moderator=="true"?"NO":"YES";
+				$(button).attr("value",updatedModeratorStatus);
+				
+				updatedModeratorClass = moderator=="true"?"is_not_moderator":"is_moderator";
+				$(button).attr("class",updatedModeratorClass);
+				
+			}
+			
+		}
+	
+		function updateApprovalButton(response,button,updatedApprovalStatus,updatedApprovalClass)
+		{
+		//	alert(response[0].status);
+			if( response[0].status == 1)
+			{
+				$(button).attr("value",updatedApprovalStatus);
+				$(button).attr("class",updatedApprovalClass);
+				
+			}
+			
+			
+		}
+		
+		function updateApprovalStatus(uploader,topic_id, approve_to,button,updatedApprovalStatus,updatedApprovalClass)
+		{
+	
+			 var finalUrl='/changeHealthIssueApprovalStatus?topic_id='+topic_id+'&approve_to='+approve_to+'&uploader='+uploader;
+	    	 var req=$.ajax({
+	                   type:"GET",
+	                   url:finalUrl,
+	                   //contentType: "application/json; charset=utf-8",
+	                   dataType:"JSON",
+	                   success: function(html){
+	                 	 // alert(html[0].about);
+	                 	 // $("#load_wait").hide();
+	                 //	 alert(html);
+	                 	 updateApprovalButton(html,button,updatedApprovalStatus,updatedApprovalClass)
+	                 	                             
+	                },
+	               complete:function(jqXHR, textStatus) {
+	                 // alert("request complete "+textStatus);
+	            	 //  $("#load_wait").hide();
+	               },
+	              error: function(xhr, textStatus, errorThrown){
+	                //  alert('request failed->'+textStatus);
+	            	//  $("#load_wait").hide();
+	              }   
+	              
+	              
+	    	 });  
+
+
+	}
+	
+
+
+</script>
+
+
+</head>
+
+         <link href="../LANDING/bootstrap.css" rel="stylesheet">   
+        <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-31924728-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+ 
+
+    
+     <script type="text/javascript">
+                 function openLoginPopup(){
+                	 alert("Please make sure Pop-ups are enabled in your browser");
+                	  var auth_win=window.open("/AUTH/auth.jsp","Auth", "width=1400,height=500,scrollbars=no");
+                	  var timer = setInterval(function() {   
+                		    if(auth_win.closed) {  
+                		        clearInterval(timer);  
+                		        window.location.reload(); 
+                		    }  
+                		}, 1000);
+               	                 	  
+                  }
+                 
+                 function visitHome() {
+                	 
+                	 window.location="/login.jsp";
+					
+				}
+                 
+	</script>
+    	
+
+<!-- header id="header">
+	
+	  <div id="logo" onclick="visitHome()">	
+	  	<img src="/STATICS/images/MA-logo.jpg" height="50px" width="auto"/>
+	  	
+	  		 <strong>ArogyaUDHC  - User-driven Health care	</strong>
+	  </div>
+	  <div id="all_links">	  		
+				<ul >
+				
+					<li> <a class="popup_login" onclick="openLoginPopup()" href="#"> LOGIN</a>
+					</li>
+				
+					<li> <a style='background-color:red' href="/HOW/how.jsp">HOW</a>
+					</li>
+					
+					<li><a href="/STATICS/what.jsp">WHAT</a>
+					</li>
+					
+					<li><a href="/STATICS/why.jsp">WHY</a>
+					</li>
+					
+					
+					<li><a style='background-color:red'  href="/INPUT/input_directory.jsp">INPUT</a>
+					</li>
+					
+					<li><a href="/PROCESS/process.jsp">PROCESS</a>
+					</li>
+					
+					<li><a href="/SOLUTION/solutionList.jsp">OUTPUT</a>
+					</li>
+			
+						
+					
+				
+					<li><a href="/DASHBOARD/dashboard.jsp">DASHBOARD</a>
+					</li>
+				
+					
+					
+				</ul>	
+		</div> 	  
+	
+</header-->
+
+
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+
+      <div class="navbar-inner">
+        <div class="container">
+       
+          
+          <a class="brand" href="../login.jsp.html">
+          		
+          	<img src="../STATICS/images/MA-logo.jpg" height="10px" width="30px"/>
+	  	
+	  		 <strong>ArogyaUDHC	</strong>
+	     </a>
+          <div class="nav-collapse collapse">
+            <ul class="nav" >
+              
+				<li> <a class="popup_login btn btn-lg"" onclick="openLoginPopup()" href="dashboard.jsp.html#"> LOGIN</a>
+					</li>
+				
+					<li> <a class="btn btn-lg" href="../HOW/how.jsp.html">HOW</a>
+					</li>
+					
+					<li><a class="btn btn-lg" href="../STATICS/what.jsp.html">WHAT</a>
+					</li>
+					
+					<li><a class="btn  btn-lg" href="../STATICS/why.jsp.html">WHY</a>
+					</li>
+					
+					
+					<li><a  class="btn  btn-lg" href="../INPUT/input_directory.jsp.html">INPUT</a>
+					</li>
+					
+					<li><a class="btn btn-lg" href="../PROCESS/process.jsp.html">PROCESS</a>
+					</li>
+					
+					<li><a class="btn btn-lg" href="../SOLUTION/solutionList.jsp.html">OUTPUT</a>
+					</li>
+					<!-- 
+			
+					 -->	
+					
+				
+					<li><a class="btn btn-lg" href="dashboard.jsp.html">DASHBOARD</a>
+					</li>
+
+
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      
+    </div>
+ </div>
+
+<style>
+
+
+
+#header{
+	z-index:999;
+	position:fixed;
+	background-color: #F1F1F1;	
+	 border: 1px solid grey;
+	 padding:10px;
+	 width:100%;
+	 margin: auto;top:0;
+}
+
+#logo{
+
+	cursor:pointer;
+
+	float:left;
+	width:30%;
+	
+	background: rgb(246,248,249); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(246,248,249,1) 0%, rgba(229,235,238,1) 50%, rgba(215,222,227,1) 51%, rgba(245,247,249,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(246,248,249,1)), color-stop(50%,rgba(229,235,238,1)), color-stop(51%,rgba(215,222,227,1)), color-stop(100%,rgba(245,247,249,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#f5f7f9',GradientType=0 ); /* IE6-9 */
+	
+}
+#all-links{
+	
+
+}
+#all_links ul li{
+	display: inline;
+
+} 
+
+#all_links ul li a{
+	background-color: #174FF5;
+	color: white;
+	text-decoration: none;
+	padding: 10px;
+	border-radius: 5px;
+	font-weight: bold;
+
+}
+
+#all_links ul li a:hover{
+	background-color: green;
+	color: white;
+	
+
+}
+	
+</style>
+
+<br><br><br><br><br><br>
+<body >
+
+<div id="load_wait">
+	
+		<img src="../STATICS/images/loading2.gif"/>
+
+</div>
+
+
+
+<div align="center"><br><br><br><br>
+	Work in progress.
+	
+</div>
+
+</body>
+</html>

@@ -1,0 +1,673 @@
+
+
+
+
+
+<html>
+<head>
+<meta charset='utf-8' />
+
+
+<script type="text/javascript"
+	src="js/jquery-1.8.3.min.js"></script>
+<link
+	href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css"
+	rel="stylesheet" type="text/css" />
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+<script
+	src="colorbox/jquery.colorbox.js"></script>
+<link rel="stylesheet"
+	href="colorbox/colorbox.css" />
+
+
+
+
+
+<title>a 47 year old male presenting with pain in the hand, diminished visual acuity and palpable tiny nodular spots on the face </title>
+<style type="text/css">
+/* jQuery lightBox plugin - Gallery style */
+#gallery {
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	padding: 5px;
+	z-index: 1;
+	width: 40%;
+	height: 300px;
+	overflow: auto;
+}
+
+#gallery ul {
+	list-style: none;
+}
+
+#gallery ul li {
+	display: inline;
+}
+
+#gallery ul img {
+	border: 5px solid #3e3e3e;
+	border-width: 5px 5px 20px;
+}
+
+#gallery ul a:hover img {
+	border: 5px solid #fff;
+	border-width: 5px 5px 20px;
+	color: #fff;
+	width: auto;
+	height: 650px;
+	border-style: solid;
+	border-color: black;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	position: absolute;
+	z-index: 900;
+}
+
+
+#comments_guidelines {
+	background-color: #FAFAFA;
+	color: #021C33;
+	font-size: 100%;
+	padding: 1%;
+	margin-left: 10%;
+	margin-right: 10%;
+	border-color: #021C33;
+	border: medium;
+	border-width: 1px;
+	border-style: solid;
+	font-weight: 2px;
+}
+
+.comments_guidelines a {
+	color: #3482C2;
+}
+
+#b {
+	background-color: #4084F2;
+	color: white;
+	font-size: 120%;
+	padding: 12px;
+	
+}
+
+
+.discussion_div {
+	margin-right: 10%;
+	margin-left: 10%;
+}
+
+#issue_metadata {
+    border-radius:10px;
+	background-color: #FAFAFA;
+	color: #021C33;
+	font-size: 110%;
+	padding: 1%;
+	margin-left: 10%;
+	margin-right: 10%;
+	
+	font-weight: 2px;
+	
+	-moz-box-shadow: 0 0 10px #ccc;
+	-webkit-box-shadow: 0 0 10px #ccc;
+	box-shadow: 0 0 10px #ccc;
+}
+
+
+
+#edit_link
+{
+	text-decoration: none;
+	padding: 10px;
+	font-size: 110%;
+	background-color: #6397E1;
+	color: white;
+	
+}
+
+div#topic_div{
+	
+	color: #032844;
+	padding: 12px;
+	font-size: 130%;
+    border-radius: 15px;
+}
+
+div#similar_issues_div{
+
+	padding: 10px;
+
+
+}
+
+div#similar_issues_list{
+	
+	
+	font-size: 110%;
+}
+div.similar_issues_entry{
+
+	margin: 20px;
+	
+}
+
+a.similar_issues_link{
+	
+	
+}
+
+</style>
+
+
+
+<link rel="stylesheet" href="../mystyle.css"
+	type="text/css" />
+
+
+
+
+
+<script src="http://yui.yahooapis.com/3.5.0/build/yui/yui-min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="http://yui.yahooapis.com/2.9.0/build/menu/assets/skins/sam/menu.css" />
+<link rel="stylesheet" type="text/css"
+	href="http://yui.yahooapis.com/2.9.0/build/button/assets/skins/sam/button.css" />
+<link rel="stylesheet" type="text/css"
+	href="http://yui.yahooapis.com/2.9.0/build/fonts/fonts-min.css" />
+<link rel="stylesheet" type="text/css"
+	href="http://yui.yahooapis.com/2.9.0/build/container/assets/skins/sam/container.css" />
+<link rel="stylesheet" type="text/css"
+	href="http://yui.yahooapis.com/2.9.0/build/editor/assets/skins/sam/editor.css" />
+<script type="text/javascript"
+	src="http://yui.yahooapis.com/2.9.0/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script type="text/javascript"
+	src="http://yui.yahooapis.com/2.9.0/build/element/element-min.js"></script>
+<script type="text/javascript"
+	src="http://yui.yahooapis.com/2.9.0/build/container/container-min.js"></script>
+<script type="text/javascript"
+	src="http://yui.yahooapis.com/2.9.0/build/menu/menu-min.js"></script>
+<script type="text/javascript"
+	src="http://yui.yahooapis.com/2.9.0/build/button/button-min.js"></script>
+<script type="text/javascript"
+	src="http://yui.yahooapis.com/2.9.0/build/editor/editor-min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="http://yui.yahooapis.com/2.9.0/build/fonts/fonts-min.css" />
+<script type="text/javascript"
+	src="http://yui.yahooapis.com/2.9.0/build/yahoo/yahoo-min.js"></script>
+<script type="text/javascript"
+	src="http://yui.yahooapis.com/2.9.0/build/event/event-min.js"></script>
+<script type="text/javascript"
+	src="http://yui.yahooapis.com/2.9.0/build/connection/connection-min.js"></script>
+
+<script>
+            
+ 		  // jQuery.noConflict();  
+		
+            
+ 		$(document).ready(function() {
+            	           //  $('#gallery a').lightBox();
+                 	$(".report_image").colorbox({rel:'report_image', top: 100, photo:'true', transition:"none", width:"auto", height:"1000px"});
+                    fetchPosts();
+                    fetchSimilarCases();
+            			//	alert("touched");
+            			
+                    		             			
+
+            });
+ 		
+ 		function fetchSimilarCases()
+ 		{
+ 			var issue_description =  '									      									      									      									                                                      <strong>History uploaded by Sakar Saxena Intern PCMS in the summer of 2014<br><br>as per the patient he was apparently alright 3 months back when he developed pain in the hand and the wrist which was insidious in onset and progressive in nature. <br><br>He then complained of inability to see nearby objects and also presented with subcutaneous nodular eruptions over the malar area of the face since 8 years.<br><br></strong><br>';
+ 			var values = "issue_description="+escape(issue_description);
+ 			
+ 		    var req=$.ajax({
+ 			        url: "/GetSimilarCases",
+ 			        type: "post",
+ 			        data: values,
+ 			        success: function(health_cases_json_array){
+ 			          // alert("success");	             
+ 			            display_similar_health_cases(health_cases_json_array);
+ 			        },
+ 			        error:function(){
+ 			            console.log("failure");	           
+ 			        }   
+ 		     }); 			
+ 		}
+ 		
+ 		function display_similar_health_cases(similar_health_cases)
+ 		{
+ 			//alert(similar_health_cases[0].title )
+ 			
+ 			  
+ 			var count = 0;
+ 			for( health_case in similar_health_cases  )
+  			{
+ 					if ( ++count > 9) break;
+ 				
+ 					//alert(similar_health_cases[health_case].title);
+ 					var similar_issues_entry=document.createElement("div");
+ 	 	 			var similar_issues_url=document.createElement("a");
+ 	 	 			
+ 	 	 			$(similar_issues_url).append( similar_health_cases[health_case].title);
+ 	 	 			$(similar_issues_url).attr("href", similar_health_cases[health_case].url);
+ 	 	 			$(similar_issues_url).attr("class", "similar_issues_link");
+ 	 	 			$(similar_issues_entry).attr("class", "similar_issues_entry");
+ 	 	 			$(similar_issues_entry).append(similar_issues_url);
+ 	 	 			
+ 	 	 			var parent_div = document.getElementById("similar_issues_list");
+ 	 	 			$(parent_div).append(similar_issues_entry);
+ 	 			
+ 			
+ 			}
+ 			
+ 		}
+            
+        function fetchPosts()
+        {
+            	//alert("Please wait while we refresh")
+            	var finalUrl='/PROCESS/showPostsGraphical.jsp?topic_id=1229';
+                var req=$.ajax({
+                              type:"GET",
+                              url:finalUrl,
+                           //   dataType:"script",
+                              success: function(html){
+                           // 	  alert('Request sucessful.');
+                            	  $(".discussion_div").html(html);
+                           // 	  alert(html);
+                                 
+                           },
+                          complete:function(jqXHR, textStatus) {
+                            // alert("request complete "+textStatus);
+                          },
+                         error: function(xhr, textStatus, errorThrown){
+                           //  alert('request failed->'+textStatus);
+                         }             
+                });  
+                     
+          }
+
+            </script>
+
+
+</head>
+
+
+
+
+
+
+<div><link href="../LANDING/bootstrap.css" rel="stylesheet">   
+        <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-31924728-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+ 
+
+    
+     <script type="text/javascript">
+                 function openLoginPopup(){
+                	 alert("Please make sure Pop-ups are enabled in your browser");
+                	  var auth_win=window.open("/AUTH/auth.jsp","Auth", "width=1400,height=500,scrollbars=no");
+                	  var timer = setInterval(function() {   
+                		    if(auth_win.closed) {  
+                		        clearInterval(timer);  
+                		        window.location.reload(); 
+                		    }  
+                		}, 1000);
+               	                 	  
+                  }
+                 
+                 function visitHome() {
+                	 
+                	 window.location="/login.jsp";
+					
+				}
+                 
+	</script>
+    	
+
+<!-- header id="header">
+	
+	  <div id="logo" onclick="visitHome()">	
+	  	<img src="/STATICS/images/MA-logo.jpg" height="50px" width="auto"/>
+	  	
+	  		 <strong>ArogyaUDHC  - User-driven Health care	</strong>
+	  </div>
+	  <div id="all_links">	  		
+				<ul >
+				
+					<li> <a class="popup_login" onclick="openLoginPopup()" href="#"> LOGIN</a>
+					</li>
+				
+					<li> <a style='background-color:red' href="/HOW/how.jsp">HOW</a>
+					</li>
+					
+					<li><a href="/STATICS/what.jsp">WHAT</a>
+					</li>
+					
+					<li><a href="/STATICS/why.jsp">WHY</a>
+					</li>
+					
+					
+					<li><a style='background-color:red'  href="/INPUT/input_directory.jsp">INPUT</a>
+					</li>
+					
+					<li><a href="/PROCESS/process.jsp">PROCESS</a>
+					</li>
+					
+					<li><a href="/SOLUTION/solutionList.jsp">OUTPUT</a>
+					</li>
+			
+						
+					
+				
+					<li><a href="/DASHBOARD/dashboard.jsp">DASHBOARD</a>
+					</li>
+				
+					
+					
+				</ul>	
+		</div> 	  
+	
+</header-->
+
+
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+
+      <div class="navbar-inner">
+        <div class="container">
+       
+          
+          <a class="brand" href="../login.jsp.html">
+          		
+          	<img src="../STATICS/images/MA-logo.jpg" height="10px" width="30px"/>
+	  	
+	  		 <strong>ArogyaUDHC	</strong>
+	     </a>
+          <div class="nav-collapse collapse">
+            <ul class="nav" >
+              
+				<li> <a class="popup_login btn btn-lg"" onclick="openLoginPopup()" href="displayIssueGraphically.jsp-topic_id=1229&solution_id=106.html#"> LOGIN</a>
+					</li>
+				
+					<li> <a class="btn btn-lg" href="../HOW/how.jsp.html">HOW</a>
+					</li>
+					
+					<li><a class="btn btn-lg" href="../STATICS/what.jsp.html">WHAT</a>
+					</li>
+					
+					<li><a class="btn  btn-lg" href="../STATICS/why.jsp.html">WHY</a>
+					</li>
+					
+					
+					<li><a  class="btn  btn-lg" href="input_directory.jsp.html">INPUT</a>
+					</li>
+					
+					<li><a class="btn btn-lg" href="../PROCESS/process.jsp.html">PROCESS</a>
+					</li>
+					
+					<li><a class="btn btn-lg" href="../SOLUTION/solutionList.jsp.html">OUTPUT</a>
+					</li>
+					<!-- 
+			
+					 -->	
+					
+				
+					<li><a class="btn btn-lg" href="../DASHBOARD/dashboard.jsp.html">DASHBOARD</a>
+					</li>
+
+
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      
+    </div>
+ </div>
+
+<style>
+
+
+
+#header{
+	z-index:999;
+	position:fixed;
+	background-color: #F1F1F1;	
+	 border: 1px solid grey;
+	 padding:10px;
+	 width:100%;
+	 margin: auto;top:0;
+}
+
+#logo{
+
+	cursor:pointer;
+
+	float:left;
+	width:30%;
+	
+	background: rgb(246,248,249); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(246,248,249,1) 0%, rgba(229,235,238,1) 50%, rgba(215,222,227,1) 51%, rgba(245,247,249,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(246,248,249,1)), color-stop(50%,rgba(229,235,238,1)), color-stop(51%,rgba(215,222,227,1)), color-stop(100%,rgba(245,247,249,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#f5f7f9',GradientType=0 ); /* IE6-9 */
+	
+}
+#all-links{
+	
+
+}
+#all_links ul li{
+	display: inline;
+
+} 
+
+#all_links ul li a{
+	background-color: #174FF5;
+	color: white;
+	text-decoration: none;
+	padding: 10px;
+	border-radius: 5px;
+	font-weight: bold;
+
+}
+
+#all_links ul li a:hover{
+	background-color: green;
+	color: white;
+	
+
+}
+	
+</style></div>
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+<br><br>
+<div id="gallery">
+	<ul>
+		
+
+		<li><a class="report_image"
+			href="../ViewImage-file_id=2939&scale=800.png"
+			title=""> <img
+				src='../ViewImage-file_id=2939&scale=500.png'
+				height='200px' width='200px' />
+		</a></li>
+
+
+		
+
+		<li><a class="report_image"
+			href="../ViewImage-file_id=2940&scale=800.png"
+			title=""> <img
+				src='../ViewImage-file_id=2940&scale=500.jpeg'
+				height='200px' width='200px' />
+		</a></li>
+
+
+		
+
+		<li><a class="report_image"
+			href="../ViewImage-file_id=2941&scale=800.jpeg"
+			title=""> <img
+				src='../ViewImage-file_id=2941&scale=500.jpeg'
+				height='200px' width='200px' />
+		</a></li>
+
+
+		
+
+		<li><a class="report_image"
+			href="../ViewImage-file_id=2942&scale=800.jpeg"
+			title=""> <img
+				src='../ViewImage-file_id=2942&scale=500.jpeg'
+				height='200px' width='200px' />
+		</a></li>
+
+
+		
+
+		<li><a class="report_image"
+			href="../ViewImage-file_id=2943&scale=800.jpeg"
+			title=""> <img
+				src='../ViewImage-file_id=2943&scale=500.jpeg'
+				height='200px' width='200px' />
+		</a></li>
+
+
+		
+
+		<li><a class="report_image"
+			href="../ViewImage-file_id=2944&scale=800.jpeg"
+			title=""> <img
+				src='../ViewImage-file_id=2944&scale=500.jpeg'
+				height='200px' width='200px' />
+		</a></li>
+
+
+		
+
+		<li><a class="report_image"
+			href="../ViewImage-file_id=2945&scale=800.jpeg"
+			title=""> <img
+				src='../ViewImage-file_id=2945&scale=500.jpeg'
+				height='200px' width='200px' />
+		</a></li>
+
+
+		
+	</ul>
+</div>
+
+
+
+
+
+<strong> <br>
+<br>
+<br>
+
+
+<br>
+
+
+	<div align="center" id="issue_metadata">
+
+		<br>
+		<a id="edit_link" class="btn btn-info" 
+			href="../UPLOADER/care-seeker-input-edit.jsp-topic_id=1229.html">Edit </a> <br>
+		<br>
+
+	<div id="topic_div">
+		a 47 year old male presenting with pain in the hand, diminished visual acuity and palpable tiny nodular spots on the face 
+	</div>
+	<hr></hr>
+		
+</strong>
+
+<br> Patient name : &nbsp;
+
+<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=ACACIA736PENNATA01.html">
+  		ACACIA736PENNATA01
+  		</a>
+  		
+
+<br>
+
+<!-- Uploaded by: sakarsaxena009@gmail.com  -->
+<br>
+
+
+<br>
+<br>
+
+<div align="left">
+
+										      									      									      									                              
+                        <strong>History uploaded by Sakar Saxena Intern PCMS in the summer of 2014<br><br>as per the patient he was apparently alright 3 months back when he developed pain in the hand and the wrist which was insidious in onset and progressive in nature. <br><br>He then complained of inability to see nearby objects and also presented with subcutaneous nodular eruptions over the malar area of the face since 8 years.<br><br></strong><br>
+
+</div>
+
+<script type="text/javascript">
+	
+
+</script>
+
+<hr></hr>
+
+<div id="similar_issues_div" align="left">
+	
+	<h4> Similar health cases from <a href="http://www.bmj.com/">BMJ </a> </h4> <br>
+	<div id="similar_issues_list">
+		
+		
+	
+	</div>
+</div>
+
+
+</div>
+
+<br>
+<br>
+
+
+
+<br>
+<br>
+
+
+
+
+
+</html>

@@ -1,0 +1,729 @@
+
+
+
+
+
+<html>
+<head>
+<meta charset='utf-8' />
+
+
+<script type="text/javascript"
+	src="js/jquery-1.8.3.min.js"></script>
+<link
+	href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css"
+	rel="stylesheet" type="text/css" />
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+<script
+	src="colorbox/jquery.colorbox.js"></script>
+<link rel="stylesheet"
+	href="colorbox/colorbox.css" />
+
+
+
+
+
+<title>Constant Heartburn for 15 years</title>
+<style type="text/css">
+/* jQuery lightBox plugin - Gallery style */
+#gallery {
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	padding: 5px;
+	z-index: 1;
+	width: 40%;
+	height: 300px;
+	overflow: auto;
+}
+
+#gallery ul {
+	list-style: none;
+}
+
+#gallery ul li {
+	display: inline;
+}
+
+#gallery ul img {
+	border: 5px solid #3e3e3e;
+	border-width: 5px 5px 20px;
+}
+
+#gallery ul a:hover img {
+	border: 5px solid #fff;
+	border-width: 5px 5px 20px;
+	color: #fff;
+	width: auto;
+	height: 650px;
+	border-style: solid;
+	border-color: black;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	position: absolute;
+	z-index: 900;
+}
+
+
+#comments_guidelines {
+	background-color: #FAFAFA;
+	color: #021C33;
+	font-size: 100%;
+	padding: 1%;
+	margin-left: 10%;
+	margin-right: 10%;
+	border-color: #021C33;
+	border: medium;
+	border-width: 1px;
+	border-style: solid;
+	font-weight: 2px;
+}
+
+.comments_guidelines a {
+	color: #3482C2;
+}
+
+#b {
+	background-color: #4084F2;
+	color: white;
+	font-size: 120%;
+	padding: 12px;
+	
+}
+
+
+.discussion_div {
+	margin-right: 10%;
+	margin-left: 10%;
+}
+
+#issue_metadata {
+    border-radius:10px;
+	background-color: #FAFAFA;
+	color: #021C33;
+	font-size: 110%;
+	padding: 1%;
+	margin-left: 10%;
+	margin-right: 10%;
+	
+	font-weight: 2px;
+	
+	-moz-box-shadow: 0 0 10px #ccc;
+	-webkit-box-shadow: 0 0 10px #ccc;
+	box-shadow: 0 0 10px #ccc;
+}
+
+
+
+#edit_link
+{
+	text-decoration: none;
+	padding: 10px;
+	font-size: 110%;
+	background-color: #6397E1;
+	color: white;
+	
+}
+
+div#topic_div{
+	
+	color: #032844;
+	padding: 12px;
+	font-size: 130%;
+    border-radius: 15px;
+}
+
+div#similar_issues_div{
+
+	padding: 10px;
+
+
+}
+
+div#similar_issues_list{
+	
+	
+	font-size: 110%;
+}
+div.similar_issues_entry{
+
+	margin: 20px;
+	
+}
+
+a.similar_issues_link{
+	
+	
+}
+
+</style>
+
+
+
+<link rel="stylesheet" href="../mystyle.css"
+	type="text/css" />
+
+
+
+
+
+<script src="http://yui.yahooapis.com/3.5.0/build/yui/yui-min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="http://yui.yahooapis.com/2.9.0/build/menu/assets/skins/sam/menu.css" />
+<link rel="stylesheet" type="text/css"
+	href="http://yui.yahooapis.com/2.9.0/build/button/assets/skins/sam/button.css" />
+<link rel="stylesheet" type="text/css"
+	href="http://yui.yahooapis.com/2.9.0/build/fonts/fonts-min.css" />
+<link rel="stylesheet" type="text/css"
+	href="http://yui.yahooapis.com/2.9.0/build/container/assets/skins/sam/container.css" />
+<link rel="stylesheet" type="text/css"
+	href="http://yui.yahooapis.com/2.9.0/build/editor/assets/skins/sam/editor.css" />
+<script type="text/javascript"
+	src="http://yui.yahooapis.com/2.9.0/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script type="text/javascript"
+	src="http://yui.yahooapis.com/2.9.0/build/element/element-min.js"></script>
+<script type="text/javascript"
+	src="http://yui.yahooapis.com/2.9.0/build/container/container-min.js"></script>
+<script type="text/javascript"
+	src="http://yui.yahooapis.com/2.9.0/build/menu/menu-min.js"></script>
+<script type="text/javascript"
+	src="http://yui.yahooapis.com/2.9.0/build/button/button-min.js"></script>
+<script type="text/javascript"
+	src="http://yui.yahooapis.com/2.9.0/build/editor/editor-min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="http://yui.yahooapis.com/2.9.0/build/fonts/fonts-min.css" />
+<script type="text/javascript"
+	src="http://yui.yahooapis.com/2.9.0/build/yahoo/yahoo-min.js"></script>
+<script type="text/javascript"
+	src="http://yui.yahooapis.com/2.9.0/build/event/event-min.js"></script>
+<script type="text/javascript"
+	src="http://yui.yahooapis.com/2.9.0/build/connection/connection-min.js"></script>
+
+<script>
+            
+ 		  // jQuery.noConflict();  
+		
+            
+ 		$(document).ready(function() {
+            	           //  $('#gallery a').lightBox();
+                 	$(".report_image").colorbox({rel:'report_image', top: 100, photo:'true', transition:"none", width:"auto", height:"1000px"});
+                    fetchPosts();
+                    fetchSimilarCases();
+            			//	alert("touched");
+            			
+                    		             			
+
+            });
+ 		
+ 		function fetchSimilarCases()
+ 		{
+ 			var issue_description =  '                                                                                                                                                <p class="MsoNormal">I am sufferer of constant heartburn from last 15 years. My heart burn startedin 1998, I did endoscopy and they didn t find any problem and prescribed antacidand pain killer.</p><p class="MsoNormal">My heart burn went on since then and I went to ManipalHospital/Pokhara/Nepal and found a very good hearted &nbsp;Doctor. He was very keen on my lifestyleand problem; After long inquiry and several tests like GI endoscopy; BariumSwallow; ecg; echo; several X-rays, he finalized his ideas on my problem likethis:</p><p class="MsoNormal"><strong><em>A yoga teacher with persistent reflux symptoms<o:p></o:p></em></strong></p><p class="MsoNormal"><em>A 30 years old yogateacher from Pokhara, Nepal, presented to us with severe prolonged heart burnand sour eructation (intermittent reflux symptoms) for 2 years not respondingto PPI and with no marked abnormality on available&nbsp; investigations like Upper Gastro Intestinal(UGI) endoscopy with biopsy and barium swallow. There was however a patulouslower esophageal sphincter along with a hiatus hernia noted on UGI endoscopyalthough there were no erosions due to reflux.<o:p></o:p></em></p><p class="MsoNormal"><em>He also reportedhaving noticed exacerbation of his symptoms particularly after Shirsana(headstand), As to the etiology of this troublesome reflux, he recalled having had amaster kunjal kriya(vomiting) and also demonstrated it a number of times dailyto his students. Kunjal Kriya is a special technique involving induced reverseperistalsis following intake of a large volume of water. It is supposed to havecleansing properties and it claims to throw fermented waste out f the stomachand prevents auto poisoning of the body. It is also recommended for bronchialasthma by yogic schools.<o:p></o:p></em></p><p class="MsoNormal"><em>Even during attacks repeatedinduced reverse peristalsis in the form of kunjal kriya is likely to have beenresponsible for the persistent esophageal reflux in this yoga teacher, sincehis symptoms were much better having given up kunjal kriya and Shirsasana (headstand) for a few months initially ( but recurred again). Heartburn and acidregurgitation have a big specificity (89 and 95% respectively) for the presenceof gastro esophageal reflux disease. <o:p></o:p></em></p><em><o:p></o:p></em><p class="MsoNormalCxSpMiddle"><em></em>Even after all the efforts made by Dr. my heartburn persisted. I kept trying other alternative ways but didn thelp at all. I changed my diet, changed my lifestyle, lifted the bed on headside, fasted for 10 days, tried several sedative &nbsp;and anti depressant medications nothingsseemed helping me. My pain continued after or before meal; I would not realize painwhile sleeping but as soon as I got up pain is there. Character of pain is sameas beginning of starting in 1998; pain is on left side of the chest in heartregion. </p><p class="MsoNormalCxSpMiddle">In 2010 I went to Gangaram hospital got further investigated with 24 hour pH manometry which revealed significant reflux (Image 1) and got anoperation called laparoscopic Nissen s fundoplication, it has been 3 years since myoperation but my symptoms didn t change; it is still there as acute as before; throughoutthose 15 years I might have done more than 10 endoscopies, more than 15 x-rays,more than 5 echoes, more the 15 ecgs; tread mill tests etc.</p><p class="MsoNormalCxSpMiddle">Recent endoscopy report on Feb 26/2013 says</p><p class="MsoNormalCxSpMiddle"><o:p>&nbsp;</o:p><em>E.C. MucosalJunction: 36 cm<o:p></o:p></em></p><p class="MsoNormalCxSpMiddle"><em>Mucosa:Esophagitis LA grade A<o:p></o:p></em></p><p class="MsoNormalCxSpMiddle"><em>Varices:Nill<o:p></o:p></em></p><p class="MsoNormalCxSpMiddle"><em>Hiatushernia: Nill<o:p></o:p></em></p><p class="MsoNormalCxSpMiddle"><em>Cardia:normal<o:p></o:p></em></p><p class="MsoNormalCxSpMiddle"><em>Fundus:Layer of bile along the mucosa<o:p></o:p></em></p><p class="MsoNormalCxSpMiddle"><em>Corpus:Mucosa stained with bile<o:p></o:p></em></p><p class="MsoNormalCxSpMiddle"><em>Antrum: Mildantral gastritis<o:p></o:p></em></p><p class="MsoNormalCxSpMiddle"><em>Pyloricring: Normal<o:p></o:p></em></p><p class="MsoNormalCxSpMiddle"><em>Miscellaneous:Duodneo-gastric reflux of bile<o:p></o:p></em></p><p class="MsoNormalCxSpMiddle"><em>Duodenum<o:p></o:p></em></p><p class="MsoNormalCxSpMiddle"><em>D1: Mucosastained with bile<o:p></o:p></em></p><p class="MsoNormalCxSpMiddle"><em>D2: Normal<o:p></o:p></em></p><p class="MsoNormalCxSpMiddle"><em>Impression:Esophagitis LA grade A; mild antral gastritis with billary reflux<o:p></o:p></em></p><p class="MsoNormalCxSpMiddle"><em></em>One thing Irecently found that whenever I had mushroom I had severe pain in my whole chestand stomach; unbearable pain persisted for 30 minutes to 1 hours anddisappeared; it happened several times but I knew reason of pain just a weekago so I stopped eating mushroom. <br></p><p class="MsoListParagraphCxSpMiddle"><o:p></o:p>I will highly appreciate any help to solvethis problem, this problem is ruining my quality of living, makes me alwaystensed and I worry a lot. </p><p class="MsoListParagraphCxSpMiddle">Thanks for your support </p><span style="line-height: 1.22;"></span><strong></strong>                                                                                                                                                ';
+ 			var values = "issue_description="+escape(issue_description);
+ 			
+ 		    var req=$.ajax({
+ 			        url: "/GetSimilarCases",
+ 			        type: "post",
+ 			        data: values,
+ 			        success: function(health_cases_json_array){
+ 			          // alert("success");	             
+ 			            display_similar_health_cases(health_cases_json_array);
+ 			        },
+ 			        error:function(){
+ 			            console.log("failure");	           
+ 			        }   
+ 		     }); 			
+ 		}
+ 		
+ 		function display_similar_health_cases(similar_health_cases)
+ 		{
+ 			//alert(similar_health_cases[0].title )
+ 			
+ 			  
+ 			var count = 0;
+ 			for( health_case in similar_health_cases  )
+  			{
+ 					if ( ++count > 9) break;
+ 				
+ 					//alert(similar_health_cases[health_case].title);
+ 					var similar_issues_entry=document.createElement("div");
+ 	 	 			var similar_issues_url=document.createElement("a");
+ 	 	 			
+ 	 	 			$(similar_issues_url).append( similar_health_cases[health_case].title);
+ 	 	 			$(similar_issues_url).attr("href", similar_health_cases[health_case].url);
+ 	 	 			$(similar_issues_url).attr("class", "similar_issues_link");
+ 	 	 			$(similar_issues_entry).attr("class", "similar_issues_entry");
+ 	 	 			$(similar_issues_entry).append(similar_issues_url);
+ 	 	 			
+ 	 	 			var parent_div = document.getElementById("similar_issues_list");
+ 	 	 			$(parent_div).append(similar_issues_entry);
+ 	 			
+ 			
+ 			}
+ 			
+ 		}
+            
+        function fetchPosts()
+        {
+            	//alert("Please wait while we refresh")
+            	var finalUrl='/PROCESS/showPostsGraphical.jsp?topic_id=223';
+                var req=$.ajax({
+                              type:"GET",
+                              url:finalUrl,
+                           //   dataType:"script",
+                              success: function(html){
+                           // 	  alert('Request sucessful.');
+                            	  $(".discussion_div").html(html);
+                           // 	  alert(html);
+                                 
+                           },
+                          complete:function(jqXHR, textStatus) {
+                            // alert("request complete "+textStatus);
+                          },
+                         error: function(xhr, textStatus, errorThrown){
+                           //  alert('request failed->'+textStatus);
+                         }             
+                });  
+                     
+          }
+
+            </script>
+
+
+</head>
+
+
+
+
+
+
+<div><link href="../LANDING/bootstrap.css" rel="stylesheet">   
+        <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-31924728-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+ 
+
+    
+     <script type="text/javascript">
+                 function openLoginPopup(){
+                	 alert("Please make sure Pop-ups are enabled in your browser");
+                	  var auth_win=window.open("/AUTH/auth.jsp","Auth", "width=1400,height=500,scrollbars=no");
+                	  var timer = setInterval(function() {   
+                		    if(auth_win.closed) {  
+                		        clearInterval(timer);  
+                		        window.location.reload(); 
+                		    }  
+                		}, 1000);
+               	                 	  
+                  }
+                 
+                 function visitHome() {
+                	 
+                	 window.location="/login.jsp";
+					
+				}
+                 
+	</script>
+    	
+
+<!-- header id="header">
+	
+	  <div id="logo" onclick="visitHome()">	
+	  	<img src="/STATICS/images/MA-logo.jpg" height="50px" width="auto"/>
+	  	
+	  		 <strong>ArogyaUDHC  - User-driven Health care	</strong>
+	  </div>
+	  <div id="all_links">	  		
+				<ul >
+				
+					<li> <a class="popup_login" onclick="openLoginPopup()" href="#"> LOGIN</a>
+					</li>
+				
+					<li> <a style='background-color:red' href="/HOW/how.jsp">HOW</a>
+					</li>
+					
+					<li><a href="/STATICS/what.jsp">WHAT</a>
+					</li>
+					
+					<li><a href="/STATICS/why.jsp">WHY</a>
+					</li>
+					
+					
+					<li><a style='background-color:red'  href="/INPUT/input_directory.jsp">INPUT</a>
+					</li>
+					
+					<li><a href="/PROCESS/process.jsp">PROCESS</a>
+					</li>
+					
+					<li><a href="/SOLUTION/solutionList.jsp">OUTPUT</a>
+					</li>
+			
+						
+					
+				
+					<li><a href="/DASHBOARD/dashboard.jsp">DASHBOARD</a>
+					</li>
+				
+					
+					
+				</ul>	
+		</div> 	  
+	
+</header-->
+
+
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+
+      <div class="navbar-inner">
+        <div class="container">
+       
+          
+          <a class="brand" href="../login.jsp.html">
+          		
+          	<img src="../STATICS/images/MA-logo.jpg" height="10px" width="30px"/>
+	  	
+	  		 <strong>ArogyaUDHC	</strong>
+	     </a>
+          <div class="nav-collapse collapse">
+            <ul class="nav" >
+              
+				<li> <a class="popup_login btn btn-lg"" onclick="openLoginPopup()" href="displayIssueGraphically.jsp-topic_id=223.html#"> LOGIN</a>
+					</li>
+				
+					<li> <a class="btn btn-lg" href="../HOW/how.jsp.html">HOW</a>
+					</li>
+					
+					<li><a class="btn btn-lg" href="../STATICS/what.jsp.html">WHAT</a>
+					</li>
+					
+					<li><a class="btn  btn-lg" href="../STATICS/why.jsp.html">WHY</a>
+					</li>
+					
+					
+					<li><a  class="btn  btn-lg" href="input_directory.jsp.html">INPUT</a>
+					</li>
+					
+					<li><a class="btn btn-lg" href="../PROCESS/process.jsp.html">PROCESS</a>
+					</li>
+					
+					<li><a class="btn btn-lg" href="../SOLUTION/solutionList.jsp.html">OUTPUT</a>
+					</li>
+					<!-- 
+			
+					 -->	
+					
+				
+					<li><a class="btn btn-lg" href="../DASHBOARD/dashboard.jsp.html">DASHBOARD</a>
+					</li>
+
+
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      
+    </div>
+ </div>
+
+<style>
+
+
+
+#header{
+	z-index:999;
+	position:fixed;
+	background-color: #F1F1F1;	
+	 border: 1px solid grey;
+	 padding:10px;
+	 width:100%;
+	 margin: auto;top:0;
+}
+
+#logo{
+
+	cursor:pointer;
+
+	float:left;
+	width:30%;
+	
+	background: rgb(246,248,249); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(246,248,249,1) 0%, rgba(229,235,238,1) 50%, rgba(215,222,227,1) 51%, rgba(245,247,249,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(246,248,249,1)), color-stop(50%,rgba(229,235,238,1)), color-stop(51%,rgba(215,222,227,1)), color-stop(100%,rgba(245,247,249,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#f5f7f9',GradientType=0 ); /* IE6-9 */
+	
+}
+#all-links{
+	
+
+}
+#all_links ul li{
+	display: inline;
+
+} 
+
+#all_links ul li a{
+	background-color: #174FF5;
+	color: white;
+	text-decoration: none;
+	padding: 10px;
+	border-radius: 5px;
+	font-weight: bold;
+
+}
+
+#all_links ul li a:hover{
+	background-color: green;
+	color: white;
+	
+
+}
+	
+</style></div>
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+<br><br>
+<div id="gallery">
+	<ul>
+		
+
+		<li><a class="report_image"
+			href="../ViewImage-file_id=351&scale=800.png"
+			title="24 hour Esophageal pH manometry results in this patient"> <img
+				src='../ViewImage-file_id=351&scale=500.png'
+				height='200px' width='200px' />
+		</a></li>
+
+
+		
+	</ul>
+</div>
+
+
+
+
+
+<strong> <br>
+<br>
+<br>
+
+
+<br>
+
+
+	<div align="center" id="issue_metadata">
+
+		<br>
+		<a id="edit_link" class="btn btn-info" 
+			href="../UPLOADER/care-seeker-input-edit.jsp-topic_id=223.html">Edit </a> <br>
+		<br>
+
+	<div id="topic_div">
+		Constant Heartburn for 15 years
+	</div>
+	<hr></hr>
+		
+</strong>
+
+<br> Patient name : &nbsp;
+
+<a class="patient_profile" href="../PROFILE/PATIENT/profile.jsp-patient_name=ABELMOSCHUS532712ESCULENTUS(Nepal).html">
+  		ABELMOSCHUS532712ESCULENTUS(Nepal)
+  		</a>
+  		
+
+<br>
+
+<!-- Uploaded by: yogiasanga@gmail.com  -->
+<br>
+
+
+<br>
+<br>
+
+<div align="left">
+
+	                        
+                                                
+                                                
+                        <p class="MsoNormal">I am sufferer of constant heartburn from last 15 years. My heart burn started
+in 1998, I did endoscopy and they didn't find any problem and prescribed antacid
+and pain killer.</p>
+
+<p class="MsoNormal">My heart burn went on since then and I went to Manipal
+Hospital/Pokhara/Nepal and found a very good hearted &nbsp;Doctor. He was very keen on my lifestyle
+and problem; After long inquiry and several tests like GI endoscopy; Barium
+Swallow; ecg; echo; several X-rays, he finalized his ideas on my problem like
+this:</p>
+
+<p class="MsoNormal"><strong><em>A yoga teacher with persistent reflux symptoms<o:p></o:p></em></strong></p>
+
+<p class="MsoNormal"><em>A 30 years old yoga
+teacher from Pokhara, Nepal, presented to us with severe prolonged heart burn
+and sour eructation (intermittent reflux symptoms) for 2 years not responding
+to PPI and with no marked abnormality on available&nbsp; investigations like Upper Gastro Intestinal
+(UGI) endoscopy with biopsy and barium swallow. There was however a patulous
+lower esophageal sphincter along with a hiatus hernia noted on UGI endoscopy
+although there were no erosions due to reflux.<o:p></o:p></em></p>
+
+<p class="MsoNormal"><em>He also reported
+having noticed exacerbation of his symptoms particularly after Shirsana(head
+stand), As to the etiology of this troublesome reflux, he recalled having had a
+master kunjal kriya(vomiting) and also demonstrated it a number of times daily
+to his students. Kunjal Kriya is a special technique involving induced reverse
+peristalsis following intake of a large volume of water. It is supposed to have
+cleansing properties and it claims to throw fermented waste out f the stomach
+and prevents auto poisoning of the body. It is also recommended for bronchial
+asthma by yogic schools.<o:p></o:p></em></p>
+
+<p class="MsoNormal"><em>Even during attacks repeated
+induced reverse peristalsis in the form of kunjal kriya is likely to have been
+responsible for the persistent esophageal reflux in this yoga teacher, since
+his symptoms were much better having given up kunjal kriya and Shirsasana (head
+stand) for a few months initially ( but recurred again). Heartburn and acid
+regurgitation have a big specificity (89 and 95% respectively) for the presence
+of gastro esophageal reflux disease. <o:p></o:p></em></p><em><o:p></o:p></em>
+
+
+
+<p class="MsoNormalCxSpMiddle"><em></em>Even after all the efforts made by Dr. my heartburn persisted. I kept trying other alternative ways but didn't
+help at all. I changed my diet, changed my lifestyle, lifted the bed on head
+side, fasted for 10 days, tried several sedative &nbsp;and anti depressant medications nothings
+seemed helping me. My pain continued after or before meal; I would not realize pain
+while sleeping but as soon as I got up pain is there. Character of pain is same
+as beginning of starting in 1998; pain is on left side of the chest in heart
+region. </p>
+
+<p class="MsoNormalCxSpMiddle">In 2010 I went to Gangaram hospital got further investigated with 24 hour pH manometry which revealed significant reflux (Image 1) and got an
+operation called laparoscopic Nissen's fundoplication, it has been 3 years since my
+operation but my symptoms didn't change; it is still there as acute as before; throughout
+those 15 years I might have done more than 10 endoscopies, more than 15 x-rays,
+more than 5 echoes, more the 15 ecgs; tread mill tests etc.</p>
+
+<p class="MsoNormalCxSpMiddle">Recent endoscopy report on Feb 26/2013 says</p>
+
+
+
+<p class="MsoNormalCxSpMiddle"><o:p>&nbsp;</o:p><em>E.C. Mucosal
+Junction: 36 cm<o:p></o:p></em></p>
+
+<p class="MsoNormalCxSpMiddle"><em>Mucosa:
+Esophagitis LA grade A<o:p></o:p></em></p>
+
+<p class="MsoNormalCxSpMiddle"><em>Varices:
+Nill<o:p></o:p></em></p>
+
+<p class="MsoNormalCxSpMiddle"><em>Hiatus
+hernia: Nill<o:p></o:p></em></p>
+
+<p class="MsoNormalCxSpMiddle"><em>Cardia:
+normal<o:p></o:p></em></p>
+
+<p class="MsoNormalCxSpMiddle"><em>Fundus:
+Layer of bile along the mucosa<o:p></o:p></em></p>
+
+<p class="MsoNormalCxSpMiddle"><em>Corpus:
+Mucosa stained with bile<o:p></o:p></em></p>
+
+<p class="MsoNormalCxSpMiddle"><em>Antrum: Mild
+antral gastritis<o:p></o:p></em></p>
+
+<p class="MsoNormalCxSpMiddle"><em>Pyloric
+ring: Normal<o:p></o:p></em></p>
+
+<p class="MsoNormalCxSpMiddle"><em>Miscellaneous:
+Duodneo-gastric reflux of bile<o:p></o:p></em></p>
+
+<p class="MsoNormalCxSpMiddle"><em>Duodenum<o:p></o:p></em></p>
+
+<p class="MsoNormalCxSpMiddle"><em>D1: Mucosa
+stained with bile<o:p></o:p></em></p>
+
+<p class="MsoNormalCxSpMiddle"><em>D2: Normal<o:p></o:p></em></p>
+
+<p class="MsoNormalCxSpMiddle"><em>Impression:
+Esophagitis LA grade A; mild antral gastritis with billary reflux<o:p></o:p></em></p>
+
+
+
+<p class="MsoNormalCxSpMiddle"><em></em>One thing I
+recently found that whenever I had mushroom I had severe pain in my whole chest
+and stomach; unbearable pain persisted for 30 minutes to 1 hours and
+disappeared; it happened several times but I knew reason of pain just a week
+ago so I stopped eating mushroom. <br></p><p class="MsoListParagraphCxSpMiddle"><o:p></o:p>I will highly appreciate any help to solve
+this problem, this problem is ruining my quality of living, makes me always
+tensed and I worry a lot. </p>
+
+<p class="MsoListParagraphCxSpMiddle">Thanks for your support </p><span style="line-height: 1.22;"></span><strong></strong>
+                        
+                        
+                        
+                        
+                        
+                        
+
+</div>
+
+<script type="text/javascript">
+	
+
+</script>
+
+<hr></hr>
+
+<div id="similar_issues_div" align="left">
+	
+	<h4> Similar health cases from <a href="http://www.bmj.com/">BMJ </a> </h4> <br>
+	<div id="similar_issues_list">
+		
+		
+	
+	</div>
+</div>
+
+
+</div>
+
+<br>
+<br>
+
+
+
+<br>
+<br>
+
+
+
+
+
+</html>
